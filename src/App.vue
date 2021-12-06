@@ -9,6 +9,11 @@
         <p class="author">著者 長尾 清一</p>
         <p class="publisher">出版社 日経BP</p>
         <p class="publishYear">出版年 2009年7月23日</p>
+        <p class="summary">
+          概要：プロジェクトの成功とスキルアップのために、
+          日々現場で奮闘するプロジェクトマネジャーの皆さんにぜひ手にしていただきたい一冊です。
+        </p>
+        <p class="outline">目次 </p>
       </div>
     </div>
   </div>
@@ -32,6 +37,7 @@ export default {
 }
 #img {
   text-align: left;
+  padding-right: 50px;
 }
 .title {
   font-size: 50px;
@@ -43,5 +49,6 @@ export default {
 }
 #bookTitle {
   padding-left: 50px;
+  border: solid 1px black
 }
 </style>
