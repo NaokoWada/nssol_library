@@ -2,7 +2,7 @@
   <div id="app">
     <div id="book">
       <div id="img">
-        <img alt="Vue logo" src="./assets/img.png" />
+        <img alt="book img" src="./assets/img.png"/>
       </div>
       <div id="bookTitle">
         <p class="title">ベンダーマネジメントの極意</p>
@@ -37,18 +37,19 @@ export default {
 }
 #img {
   text-align: left;
-  padding-right: 50px;
 }
 .title {
-  font-size: 50px;
+  font-size: 40px;
   margin-left: 0;
 }
 #book {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 #bookTitle {
-  padding-left: 50px;
-  border: solid 1px black
+  border: solid 1px black;
+  margin-left: 20px ;
+  padding: 10px 20px;
 }
 </style>
