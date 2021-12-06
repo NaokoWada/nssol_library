@@ -1,23 +1,24 @@
 <template>
   <div id="app">
-    <div id="img">
-      <img alt="Vue logo" src="./assets/img.png">
-    </div>
+    <div id="book">
+      <div id="img">
+        <img alt="Vue logo" src="./assets/img.png" />
+      </div>
       <div id="bookTitle">
         <p class="title">ベンダーマネジメントの極意</p>
+        <p class="author">著者 長尾 清一</p>
+        <p class="publisher">出版社 日経BP</p>
+        <p class="publishYear">出版年 2009年7月23日</p>
       </div>
-
+    </div>
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'App',
-  components: {
-    
-  }
-}
+  name: "App",
+  components: {},
+};
 </script>
 
 <style>
@@ -25,11 +26,22 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  text-align: left;
   color: #2c3e50;
   margin-top: 60px;
 }
 #img {
-  
+  text-align: left;
+}
+.title {
+  font-size: 50px;
+  margin-left: 0;
+}
+#book {
+  display: flex;
+  justify-content: center;
+}
+#bookTitle {
+  padding-left: 50px;
 }
 </style>
