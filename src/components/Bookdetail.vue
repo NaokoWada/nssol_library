@@ -2,7 +2,7 @@
   <div id="app">
     <div id="book">
       <div id="img">
-        <img alt="book img" src="../assets/img.png"/>
+        <img alt="book img" src="../assets/img.png" />
       </div>
       <div id="bookTitle">
         <p class="title">ベンダーマネジメントの極意</p>
@@ -16,44 +16,78 @@
         <p class="outline">目次</p>
       </div>
     </div>
-    <div id="tab">
-    <ul class="tabMenu">
-        <li @click="isSelect('1')">感想</li>
-        <li @click="isSelect('2')">Q＆A</li>
-    </ul>
-    <div class="tabContents">
-        <div v-if="isActive === '1'">
-          <textarea name="" id="" cols="30" rows="10" placeholder="感想を入力してください"></textarea>
-          <button>投稿する</button>
-        </div>
-        <div v-else-if="isActive === '2'">
-          <textarea name="" id="" cols="30" rows="10" placeholder="Q＆Aを入力してください"></textarea>
-          <button>投稿する</button>
-        </div>
-    </div>
-</div>
- 
+    <table>
+      <tr>
+        <td>
+          <div id="tab">
+            <ul class="tabMenu">
+              <li class="tabmenu" @click="isSelect('1')">感想</li>
+              <li class="tabmenu" @click="isSelect('2')">Q＆A</li>
+            </ul>
+            <div class="tabContents">
+              <div v-if="isActive === '1'">
+                <textarea
+                  name=""
+                  id=""
+                  cols="30"
+                  rows="10"
+                  placeholder="感想を入力してください"
+                ></textarea>
+                <button>投稿する</button>
+              </div>
+              <div v-else-if="isActive === '2'">
+                <textarea
+                  name=""
+                  id=""
+                  cols="30"
+                  rows="10"
+                  placeholder="Q＆Aを入力してください"
+                ></textarea>
+                <button>投稿する</button>
+              </div>
+            </div>
+          </div>
+        </td>
+
+        <td>
+          <div id="review">
+            <ul class="example">
+      
+                <li><img alt="user img" src="../assets/user.png" /><button  v-on:click="home">user1</button></li>
+                
+                  
+                <li><img alt="user img" src="../assets/user.png" /><button  v-on:click="home">user2</button></li>
+                
+                  
+                <li><img alt="user img" src="../assets/user.png" /><button  v-on:click="home">user3</button></li>
+              </ul>
+            
+          </div>
+        </td>
+      </tr>
+    </table>
   </div>
- 
+    
+
 </template>
 <script>
 export default {
   name: "App",
-  data () {
+  data() {
     return {
-      isActive: "1"
-    }
+      isActive: "1",
+    };
   },
   components: {},
   methods: {
-        isSelect: function (num) {
-            this.isActive = num;
-        }
-    }
-    
- 
+    isSelect: function (num) {
+      this.isActive = num;
+    },
+    home() {
+      this.$router.push("");
+    },
+  },
 };
- 
 </script>
  
 <style scoped>
@@ -63,13 +97,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: left;
   color: #2c3e50;
-    margin-right: 0;
- 
+  margin-right: 0;
 }
 #img {
   text-align: left;
   /* padding-right: 50px; */
-  
 }
 .title {
   font-size: 40px;
@@ -86,41 +118,43 @@ export default {
   /* padding-left: 50px; */
   margin-left: 20px;
   padding-left: 20px;
- 
+
   border: solid 1px black;
   border-width: 100%;
   margin-right: 0;
 }
- 
+
 #tab {
-  
   width: 100%;
   max-width: 500px;
-  margin: 40px auto;
+  margin: 40px 10px;
 }
 .tabMenu {
-    display: flex;
-}   
-    li {
-      width: auto;
-      padding: 10px 20px;
-      color: white;
-      border-right: 1px solid white;
-      background-color: green;
-      cursor: pointer;
-            
-      
-      }
-    
- 
-  
- 
-  .tabContents {
-    width: 100%;
-    padding: 20px;
-    border: 1px solid green;
-    
- 
-  
+  display: flex;
+}
+.tabmenu {
+  width: auto;
+  padding: 10px 20px;
+  color: white;
+  border-right: 1px solid white;
+  background-color: green;
+  cursor: pointer;
+}
+
+.tabContents {
+  width: 800px;
+  height: 300px;
+  padding: 20px;
+  border: 1px solid green;
+}
+
+.home {
+  margin: 30px;
+}
+
+.example li{
+  float: left;
+  list-style: none;
+  margin: 30px;
 }
 </style>
