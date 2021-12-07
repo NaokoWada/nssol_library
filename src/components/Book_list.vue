@@ -27,7 +27,7 @@
     
     <tbody style="display: block;overflow-y:scroll;height:600px;">
     <tr>
-      <td style="width:150px;"><img src="../assets/NWeasy.png"></td>
+      <td style="width:150px;"><img src="../assets/datamodel.png"></td>
     
     <td style="width:150px;">データモデル大全</td>
     <td style="width:150px;">★★★★☆</td>
@@ -40,7 +40,7 @@
 
     <tr>
     
-    <td style="width:150px;"><img src="../assets/NWhard.png"></td>
+    <td style="width:150px;"><img src="../assets/vendar.png"></td>
     
     <td style="width:150px;">ベンダーマネージメントの極意</td>
     <td style="width:150px;">★★★★★</td>
