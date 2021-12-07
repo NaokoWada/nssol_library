@@ -22,8 +22,14 @@
         <li @click="isSelect('2')">Q＆A</li>
     </ul>
     <div class="tabContents">
-        <div v-if="isActive === '1'">Tab All</div>
-        <div v-else-if="isActive === '2'">Tab News</div>
+        <div v-if="isActive === '1'">
+          <textarea name="" id="" cols="30" rows="10" placeholder="感想を入力してください"></textarea>
+          <button>投稿する</button>
+        </div>
+        <div v-else-if="isActive === '2'">
+          <textarea name="" id="" cols="30" rows="10" placeholder="Q＆Aを入力してください"></textarea>
+          <button>投稿する</button>
+        </div>
     </div>
 </div>
  
