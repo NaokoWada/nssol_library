@@ -1,17 +1,21 @@
 <template>
   <div id="app">
+    <BookList></BookList>
     <Header></Header>
     <Bookdetail></Bookdetail>
   </div>
 </template>
 <script>
+
+import BookList from './components/Book_list.vue'
 import Bookdetail from "./components/Bookdetail.vue"
 import Header from "./components/Header.vue"
 
 export default {
   name: "App",
   components: {
-    Bookdetail,
+    BookList
+   Bookdetail,
     Header
   },
 };

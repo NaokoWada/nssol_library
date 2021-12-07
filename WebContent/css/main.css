@@ -7,4 +7,10 @@
 
 .image_10 {
 	width: 10%;
+  text-align: center;
+}
+
+.image_50 {
+	width: 50%;
+  text-align: center;
 }
