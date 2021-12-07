@@ -1,14 +1,18 @@
 <template>
   <div id="app">
+    <Header></Header>
     <Bookdetail></Bookdetail>
   </div>
 </template>
 <script>
 import Bookdetail from "./components/Bookdetail.vue"
+import Header from "./components/Header.vue"
+
 export default {
   name: "App",
   components: {
-    Bookdetail
+    Bookdetail,
+    Header
   },
 };
  
