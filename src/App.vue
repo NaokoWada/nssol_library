@@ -14,7 +14,7 @@ import Header from "./components/Header.vue"
 export default {
   name: "App",
   components: {
-    BookList
+    BookList,
    Bookdetail,
     Header
   },
