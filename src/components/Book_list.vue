@@ -22,6 +22,18 @@
     
     <tbody style="display: block;overflow-y:scroll;height:600px;">
     <tr>
+      <td style="width:150px;"><img src="../assets/book_open_yoko.png"></td>
+    
+    <td style="width:150px;">データモデル大全</td>
+    <td style="width:150px;">★★★★☆</td>
+    <td style="width:150px;">★★★☆☆</td>
+    <td style="width:150px;"><img src="../assets/mask_woman5_faceshield.png"></td>
+    <td style="width:150px;">データモデリングの実務上の具体例がわかりやすい！</td>
+    <td style="width:150px;"><img src="../assets/mask_woman6_medical.png"></td>
+    <td style="width:150px;">もう少し具体例の難易度を高くすべき</td>
+    </tr>
+
+    <tr>
     
     <td style="width:150px;"><img src="../assets/book_open_yoko.png"></td>
     
@@ -33,17 +45,7 @@
     <td style="width:150px;"><img src="../assets/animal_angora_usagi.png"></td>
     <td style="width:150px;">そんなに読む価値なし！</td>
     </tr>
-    <tr>
-      <td style="width:150px;"><img src="../assets/book_open_yoko.png"></td>
-    
-    <td style="width:150px;">データモデル大全</td>
-    <td style="width:150px;">★★★★☆</td>
-    <td style="width:150px;">★★★☆☆</td>
-    <td style="width:150px;"><img src="../assets/mask_woman5_faceshield.png"></td>
-    <td style="width:150px;">データモデリングの実務上の具体例がわかりやすい！</td>
-    <td style="width:150px;"><img src="../assets/mask_woman6_medical.png"></td>
-    <td style="width:150px;">もう少し具体例の難易度を高くすべき</td>
-    </tr>
+
     
     </tbody>
     </table>
