@@ -26,30 +26,19 @@
     </thead>
     
     <tbody style="display: block;overflow-y:scroll;height:600px;">
-    <tr>
-      <td style="width:150px;"><img src="../assets/datamodel.png"></td>
+    <tr v-for="book in books" v-bind:key="book.id">
+      <td style="width:150px;"><img :src="book.image"></td>
     
-    <td style="width:150px;">データモデル大全</td>
-    <td style="width:150px;">★★★★☆</td>
-    <td style="width:150px;">★★★☆☆</td>
-    <td style="width:150px;"><img src="../assets/mask_woman5_faceshield.png"></td>
-    <td style="width:150px;">データモデリングの実務上の具体例がわかりやすい！</td>
-    <td style="width:150px;"><img src="../assets/mask_woman6_medical.png"></td>
-    <td style="width:150px;">もう少し具体例の難易度を高くすべき</td>
+    <td style="width:150px;">{{book.title}}</td>
+    <td style="width:150px;">{{book.internal}}</td>
+    <td style="width:150px;">{{book.bu}}</td>
+    <td style="width:150px;"><img :src="book.employee1"></td>
+    <td style="width:150px;">{{book.comment1}}</td>
+    <td style="width:150px;"><img :src="book.employee2"></td>
+    <td style="width:150px;">{{book.comment2}}</td>
     </tr>
 
-    <tr>
-    
-    <td style="width:150px;"><img src="../assets/vendar.png"></td>
-    
-    <td style="width:150px;">ベンダーマネージメントの極意</td>
-    <td style="width:150px;">★★★★★</td>
-    <td style="width:150px;">★★★★☆</td>
-    <td style="width:150px;"><img src="../assets/Specialist.png"></td>
-    <td style="width:150px;">ためになりました！</td>
-    <td style="width:150px;"><img src="../assets/animal_angora_usagi.png"></td>
-    <td style="width:150px;">そんなに読む価値なし！</td>
-    </tr>
+  
 
     
     </tbody>
@@ -60,9 +49,31 @@
 </template>
 
 <script>
-
 export default {
-  
+  data() {
+    return {
+      books:[
+            {image:'../assets/datamodel.png',
+             title:'データモデル大全', 
+             internal:'★★★★☆',
+             bu:'★★★☆☆',
+             employee1:'../assets/mask_woman5_faceshield.png',
+             comment1:'データモデリングの実務上の具体例がわかりやすい！',
+             employee2:'img src="../assets/mask_woman6_medical.png',
+             comment2:'もう少し具体例の難易度を高くすべき'},
+            {
+             image:'../assets/vendar.png',
+             title:'ベンダーマネージメントの極意',
+             internal:'★★★★★',
+             bu:'★★★★☆',
+             employee1:'../assets/mask_woman5_faceshield.png',
+             comment1:'ためになりました！',
+             employee2:'../assets/mask_woman6_medical.png',
+             comment2:'そんなに読む価値なし！'}
+             ]
+          
+    }
+  }
 }
 </script>
 
