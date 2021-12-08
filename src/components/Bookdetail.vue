@@ -97,3 +97,80 @@ export default {
 };
 </script>
 
+<style scoped>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+  margin-right: 0;
+}
+#img {
+  text-align: left;
+  margin: 10px 40px;
+  /* padding-right: 50px; */
+}
+.title {
+  font-size: 40px;
+  margin-left: 0;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+#book {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+#bookTitle {
+  /* padding-left: 50px; */
+  margin-left: 20px;
+  padding-left: 20px;
+ 
+  border: solid 1px black;
+  border-width: 100%;
+  margin-right: 0;
+}
+ 
+#tab {
+  width: 100%;
+  max-width: 500px;
+  margin: 40px 200px 40px 300px;
+}
+ 
+.tabMenu {
+  display: flex;
+}
+.tabmenu {
+  width: auto;
+  padding: 10px 20px;
+  color: white;
+  border-right: 1px solid white;
+  background-color: green;
+  cursor: pointer;
+}
+ 
+.tabContents {
+  width: 600px;
+  height: 300px;
+  padding: 20px;
+  border: 1px solid green;
+}
+ 
+.home {
+  margin: 30px;
+}
+ 
+.example li{
+  list-style: none;
+  padding: 0;
+  margin: 30px;
+  padding: auto;
+ 
+}
+ 
+.buttonmenu {
+  margin: 10px 30px;
+ 
+}
+ 
+</style>
