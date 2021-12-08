@@ -26,9 +26,11 @@
     
     <th style="width:150px;"></th><!-- 空欄用 -->
     <th style="width:150px;">タイトル</th>
+    <th style="width:150px;">キーワード</th>
+    <th style="width:150px;">読みやすさ</th>
     <th style="width:150px;">社内評価</th>
     <th style="width:150px;">BU評価</th>
-    <th style="width:150px;">キーワード</th>
+    
     <th style="width:150px;">社員A</th>
     <th style="width:150px;">感想</th>
     <th style="width:150px;">社員B</th>
@@ -41,9 +43,11 @@
       <td style="width:150px;"><img :src="book.image"></td>
     
     <td style="width:150px;">{{book.title}}</td>
+    <td style="width:150px;">{{book.keyword}}</td>
+    <td style="width:150px;">{{book.level}}</td>
     <td style="width:150px;">{{book.internal}}</td>
     <td style="width:150px;">{{book.bu}}</td>
-    <td style="width:150px;">{{book.keyword}}</td>
+    
     <td style="width:150px;"><img :src="book.employee1"></td>
     <td style="width:150px;">{{book.comment1}}</td>
     <td style="width:150px;"><img :src="book.employee2"></td>
@@ -74,7 +78,7 @@ export default {
              employee2:require('../assets/mask_woman6_medical.png'),
              comment2:'もう少し具体例の難易度を高くすべき',
              keyword:'データモデル',
-             level:'easy'},
+             level:'初級'},
             {image:require('../assets/NWhard.png'),
              title:'ネットワーク', 
              internal:'★★★★☆',
@@ -84,7 +88,7 @@ export default {
              employee2:require('../assets/mask_woman6_medical.png'),
              comment2:'最新の高度なネットワーク技術について知ることができた',
              keyword:'ネットワーク',
-             level:'hard'},
+             level:'上級'},
              {image:require('../assets/NWeasy.png'),
              title:'ネットワーク構築＆運用がしっかりわかる教科書', 
              internal:'★★★★★',
@@ -94,7 +98,7 @@ export default {
              employee2:require('../assets/mask_woman6_medical.png'),
              comment2:'初心者でもわかりやすいように説明だった',
              keyword:'ネットワーク構築',
-             level:'easy'},
+             level:'初級'},
             {
              image:require('../assets/vendar.png'),
              title:'ベンダーマネージメントの極意',
@@ -105,7 +109,7 @@ export default {
              employee2:require('../assets/mask_woman6_medical.png'),
              comment2:'そんなに読む価値なし！',
              keyword:'マネジメント',
-             level:'middle'},
+             level:'中級'},
              {
              image:require('../assets/dx.jpg'),
              title:'DXの思考法',
@@ -116,7 +120,7 @@ export default {
              employee2:require('../assets/mask_woman6_medical.png'),
              comment2:'知りたいことが書いてなかった',
              keyword:'DX',
-             level:'hard'},
+             level:'上級'},
              {
              image:require('../assets/NWospf.png'),
              title:'OSPF Complete Implementation',
@@ -127,7 +131,7 @@ export default {
              employee2:require('../assets/mask_woman6_medical.png'),
              comment2:'OSPFについて完璧に理解できる。ただし内容は英語',
              keyword:'OSPF',
-             level:'hard'}
+             level:'上級'}
              ]
           
     }
