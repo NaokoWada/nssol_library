@@ -2,7 +2,7 @@
   <div id="app">
     
     <div class="mainbody">
-     <tytle><font size="7" color="black" background-color="red">本の一覧</font><font size="4" color="black"> -現在登録されている本は ２ 冊です-</font></tytle>
+     <tytle><font size="7" color="black" background-color="red">本の一覧</font><font size="4" color="black">-現在登録されている本は ２ 冊です-</font></tytle>
     </div>
     
     <table border="1" style="border-collapse: collapse;">
@@ -53,22 +53,22 @@ export default {
   data() {
     return {
       books:[
-            {image:'../assets/datamodel.png',
+            {image:require('../assets/datamodel.png'),
              title:'データモデル大全', 
              internal:'★★★★☆',
              bu:'★★★☆☆',
-             employee1:'../assets/mask_woman5_faceshield.png',
+             employee1:require('../assets/mask_woman5_faceshield.png'),
              comment1:'データモデリングの実務上の具体例がわかりやすい！',
-             employee2:'img src="../assets/mask_woman6_medical.png',
+             employee2:require('../assets/mask_woman6_medical.png'),
              comment2:'もう少し具体例の難易度を高くすべき'},
             {
-             image:'../assets/vendar.png',
+             image:require('../assets/vendar.png'),
              title:'ベンダーマネージメントの極意',
              internal:'★★★★★',
              bu:'★★★★☆',
-             employee1:'../assets/mask_woman5_faceshield.png',
+             employee1:require('../assets/mask_woman5_faceshield.png'),
              comment1:'ためになりました！',
-             employee2:'../assets/mask_woman6_medical.png',
+             employee2:require('../assets/mask_woman6_medical.png'),
              comment2:'そんなに読む価値なし！'}
              ]
           
