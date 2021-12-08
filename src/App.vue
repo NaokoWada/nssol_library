@@ -38,30 +38,4 @@ export default {
  
 }
 
-header {
-   padding: 30px 4% 10px;
-   top: 0;
-   width: 100%;
-   background-color: #fff;
-   display: flex;
-   align-items: center;
-}
-h1 {
-   margin: 0; 
-   padding: 0;
-   font-size: 20px;
-}
-a {	
-   text-decoration: none;
-   color: #4b4b4b;
-}
-ul {
-   list-style: none;
-   margin: 0;
-   display: flex;
-}
-li {
-   margin: 0 0 0 15px;
-   font-size: 14px;
-}
 </style>
