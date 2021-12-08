@@ -8,7 +8,17 @@
     <table border="1" style="border-collapse: collapse;">
     <thead>
     <tr>
-    
+    <div keyword="app2" class="container">
+      <form>
+        <div class="form-group">
+          <label for="Keyword">タイトルorキーワード</label>
+            <input type="text" class="form-control" id="id"
+              placeholder="タイトルまたはキーワードを入力">
+            <small class="form-text">タイトルまたはキーワードを入力してください。</small>
+          <button type="submit" class="btn btn-primary">検索</button>
+        </div>
+      </form>
+    </div>
     </tr>
     </thead>
     <thead style="display: block;">
