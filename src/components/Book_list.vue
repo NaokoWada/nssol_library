@@ -29,7 +29,7 @@
     <tr v-for="book in books" v-bind:key="book.id">
       <td style="width:150px;"><img :src="book.image"></td>
     
-    <td style="width:150px;">{{book.title}}</td>
+    <td style="width:150px;"><button @click="moveDetail(1)">{{book.title}}</button></td>
     <td style="width:150px;">{{book.internal}}</td>
     <td style="width:150px;">{{book.bu}}</td>
     <td style="width:150px;"><img :src="book.employee1"></td>
@@ -72,6 +72,16 @@ export default {
              comment2:'そんなに読む価値なし！'}
              ]
           
+    }
+  },
+  methods: {
+    moveDetail(num) {
+      this.$router.push({
+        name: "Bookdetail",
+        params: {
+          id: num
+        }
+      })
     }
   }
 }
