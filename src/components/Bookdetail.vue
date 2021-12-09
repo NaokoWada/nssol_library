@@ -122,10 +122,9 @@ export default {
   margin-top: 20px;
 }
 #bookTitle {
-  /* padding-left: 50px; */
+  font-size: 20px;
   margin-left: 20px;
-  padding-left: 20px;
- 
+  padding-left:  20px;
   border: solid 1px black;
   border-width: 100%;
   margin-right: 0;
@@ -134,7 +133,7 @@ export default {
 #tab {
   width: 100%;
   max-width: 500px;
-  margin: 40px 200px 40px 350px;
+  margin: 40px 300px 40px 200px;
 }
  
 .tabMenu {
@@ -150,7 +149,7 @@ export default {
 }
  
 .tabContents {
-  width: 500px;
+  width: 600px;
   height: 300px;
   padding: 20px 60px ;
   border: 1px solid green;
