@@ -11,11 +11,11 @@
     <div keyword="app2" class="container">
       <form>
         <div class="form-group">
-          <label for="Keyword">タイトルorキーワード</label>
-            <input type="text" class="form-control" id="id"
-              placeholder="タイトルまたはキーワードを入力">
-            <small class="form-text">タイトルまたはキーワードを入力してください。</small>
-          <button type="submit" class="btn btn-primary">検索</button>
+          <!-- <small class="form-text">タイトルまたはキーワードを入力してください。</small> -->
+          <input type="text" v-model="keyword" class="form-control" id="id"
+           placeholder="タイトルまたはキーワードを入力してください。">
+          
+          <!-- <button type="submit" class="btn btn-primary">検索</button> -->
         </div>
       </form>
     </div>
@@ -39,8 +39,8 @@
     </thead>
     
     <tbody style="display: block;overflow-y:scroll;height:600px;">
-    <tr v-for="book in books" v-bind:key="book.id">
-      <!--<div v-if="book.title== keyword || book.keyword==keyword">--> 
+    <tr v-for="book in filteredbooks" v-bind:key="book.id">
+      <!--<div v-if="book.title== keyword || book.keyword==keyword">-->         
         <td style="width:150px;"><img :src="book.image"></td>
     
 
@@ -71,8 +71,10 @@
 export default {
   data() {
     return {
+      keyword:"",
       books:[
-            {image:require('../assets/datamodel.png'),
+            {id:1,
+             image:require('../assets/datamodel.png'),
              title:'データモデル大全', 
              internal:'★★★★☆',
              bu:'★★★☆☆',
@@ -81,8 +83,9 @@ export default {
              employee2:require('../assets/mask_woman6_medical.png'),
              comment2:'もう少し具体例の難易度を高くすべき',
              keyword:'データモデル',
-             level:'初級'},
-            {image:require('../assets/NWhard.png'),
+             level:'初級'             },
+            {id:2,
+             image:require('../assets/NWhard.png'),
              title:'ネットワーク', 
              internal:'★★★★☆',
              bu:'★★★☆☆',
@@ -92,7 +95,8 @@ export default {
              comment2:'最新の高度なネットワーク技術について知ることができた',
              keyword:'ネットワーク',
              level:'上級'},
-             {image:require('../assets/NWeasy.png'),
+             {id:3,
+             image:require('../assets/NWeasy.png'),
              title:'ネットワーク構築＆運用がしっかりわかる教科書', 
              internal:'★★★★★',
              bu:'★★★★★',
@@ -102,7 +106,7 @@ export default {
              comment2:'初心者でもわかりやすいように説明だった',
              keyword:'ネットワーク構築',
              level:'初級'},
-            {
+            {id:4,
              image:require('../assets/vendar.png'),
              title:'ベンダーマネージメントの極意',
              internal:'★★★★★',
@@ -113,7 +117,7 @@ export default {
              comment2:'そんなに読む価値なし！',
              keyword:'マネジメント',
              level:'中級'},
-             {
+             {id:5,
              image:require('../assets/dx.jpg'),
              title:'DXの思考法',
              internal:'★★☆☆☆',
@@ -124,7 +128,7 @@ export default {
              comment2:'知りたいことが書いてなかった',
              keyword:'DX',
              level:'上級'},
-             {
+             {id:6,
              image:require('../assets/NWospf.png'),
              title:'OSPF Complete Implementation',
              internal:'★★★★★',
@@ -148,8 +152,24 @@ export default {
         }
       })
     }
-  }
+  },
+
+  computed: {
+      filteredbooks: function() {
+        var books = [];
+        for(var i in this.books) { 
+          var b  = this.books[i];  
+          if(b.keyword.indexOf(this.keyword) !== -1) { 
+            books.push(b); 
+          }
+        }
+        return books; 
+      }
+    }
+
+
 }
+
 </script>
 
 <style scoped>
@@ -164,6 +184,14 @@ export default {
    background-image: url(../assets/haikei.png);
    text-align: center;
    vertical-align: top;
+ }
+
+ .form-control{
+   width:25%;
+    margin-right: auto;
+    padding:15px 0;
+    margin-bottom:15px;
+    background-color:whitesmoke;
  }
 
  
