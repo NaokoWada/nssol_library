@@ -1,22 +1,27 @@
 <template>
   <div id="app">
-    <BookList></BookList>
-    <Header></Header>
-    <Bookdetail></Bookdetail>
+    <div class="header-content">
+    <header>
+      <h1>
+        <a href="/">NSSOL 図書館</a>
+      </h1>
+      <nav class="pc-nav">
+        <ul>
+          <li><router-link to="/">ホーム</router-link></li>
+          <li><router-link to="/bookList">本の一覧</router-link></li>
+        </ul>
+      </nav>
+    </header>
+    <router-view/>
+  </div>
   </div>
 </template>
 <script>
 
-import BookList from './components/Book_list.vue'
-import Bookdetail from "./components/Bookdetail.vue"
-import Header from "./components/Header.vue"
 
 export default {
   name: "App",
   components: {
-    BookList,
-    Bookdetail,
-    Header
   },
 };
  
@@ -32,4 +37,5 @@ export default {
     margin-right: 0;
  
 }
+
 </style>

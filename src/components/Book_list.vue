@@ -43,7 +43,8 @@
       <div v-if="book.title== keyword || book.keyword==keyword"> 
         <td style="width:150px;"><img :src="book.image"></td>
     
-        <td style="width:150px;">{{book.title}}</td>
+
+        <td style="width:150px;"><button @click="moveDetail(1)">{{book.title}}</button></td>
         <td style="width:150px;">{{book.keyword}}</td>
         <td style="width:150px;">{{book.level}}</td>
         <td style="width:150px;">{{book.internal}}</td>
@@ -54,6 +55,7 @@
         <td style="width:150px;"><img :src="book.employee2"></td>
         <td style="width:150px;">{{book.comment2}}</td>
       </div>
+
     </tr>
   
 
@@ -135,6 +137,16 @@ export default {
              level:'上級'}
              ]
           
+    }
+  },
+  methods: {
+    moveDetail(num) {
+      this.$router.push({
+        name: "Bookdetail",
+        params: {
+          id: num
+        }
+      })
     }
   }
 }
