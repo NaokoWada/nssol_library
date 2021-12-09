@@ -16,7 +16,7 @@
         <p class="outline">目次</p>
       </div>
     </div>
-    <table>
+    <table class="detail">
       <tr>
         <td>
           <div id="tab">
@@ -48,18 +48,25 @@
             </div>
           </div>
         </td>
-
+      
         <td>
           <div id="review">
+            <h1>この本を読んだ人</h1>
             <ul class="example">
       
-                <li><img alt="user img" src="../assets/user.png" /><button  v-on:click="home">user1</button></li>
+                <li><img alt="user img" src="../assets/user.png" />
+                <br>
+                <button class="buttonmenu" v-on:click="home">user1</button></li>
                 
                   
-                <li><img alt="user img" src="../assets/user.png" /><button  v-on:click="home">user2</button></li>
+                <li><img alt="user img" src="../assets/user.png" />
+                <br>
+                <button class="buttonmenu" v-on:click="home">user2</button></li>
                 
                   
-                <li><img alt="user img" src="../assets/user.png" /><button  v-on:click="home">user3</button></li>
+                <li><img alt="user img" src="../assets/user.png" />
+                <br>
+                <button class="buttonmenu" v-on:click="home">user3</button></li>
               </ul>
             
           </div>
@@ -68,11 +75,11 @@
     </table>
   </div>
     
-
+ 
 </template>
 <script>
 export default {
-  name: "App",
+  name: "Bookdetail",
   data() {
     return {
       isActive: "1",
@@ -89,18 +96,18 @@ export default {
   },
 };
 </script>
- 
+
 <style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: left;
   color: #2c3e50;
   margin-right: 0;
 }
 #img {
   text-align: left;
+  margin: 10px 40px;
   /* padding-right: 50px; */
 }
 .title {
@@ -118,17 +125,18 @@ export default {
   /* padding-left: 50px; */
   margin-left: 20px;
   padding-left: 20px;
-
+ 
   border: solid 1px black;
   border-width: 100%;
   margin-right: 0;
 }
-
+ 
 #tab {
   width: 100%;
   max-width: 500px;
-  margin: 40px 10px;
+  margin: 40px 200px 40px 300px;
 }
+ 
 .tabMenu {
   display: flex;
 }
@@ -140,21 +148,29 @@ export default {
   background-color: green;
   cursor: pointer;
 }
-
+ 
 .tabContents {
-  width: 800px;
+  width: 600px;
   height: 300px;
   padding: 20px;
   border: 1px solid green;
 }
-
+ 
 .home {
   margin: 30px;
 }
-
+ 
 .example li{
-  float: left;
   list-style: none;
+  padding: 0;
   margin: 30px;
+  padding: auto;
+ 
 }
+ 
+.buttonmenu {
+  margin: 10px 30px;
+ 
+}
+ 
 </style>
