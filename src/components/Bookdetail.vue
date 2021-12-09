@@ -146,6 +146,7 @@ export default {
   padding: 20px 60px ;
   border: 1px solid green;
   overflow-y:scroll;
+  text-align: left;
 }
  
 .home {

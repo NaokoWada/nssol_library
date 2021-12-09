@@ -1,10 +1,10 @@
 <template>
-    <div id="tab">
-      <div class="tabContents">
+    <div id="">
+      <div class="">
           <textarea
             name=""
             id=""
-            cols="30"
+            cols="50"
             rows="10"
             placeholder="感想を入力してください"
             v-model="inputReview"
@@ -54,31 +54,9 @@ export default {
 li {
     list-style: none;
 }
-/* #tab {
-  width: 100%;
-  max-width: 500px;
-  margin: 40px 200px 40px 300px;
-}
- 
-.tabMenu {
-  display: flex;
-}
-.tabmenu {
-  width: auto;
-  padding: 10px 20px;
-  color: white;
-  border-right: 1px solid white;
-  background-color: green;
-  cursor: pointer;
-}
- 
 .tabContents {
-  width: 600px;
-  height: 300px;
-  padding: 20px;
-  border: 1px solid green;
-  overflow-y:scroll;
-} */
+    text-align: left;
+}
 
 .balloon5 {
   width: 100%;
