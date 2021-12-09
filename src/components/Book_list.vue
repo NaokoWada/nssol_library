@@ -1,4 +1,5 @@
 <template>
+
   <div id="app">
     
     <div class="mainbody">
@@ -11,11 +12,27 @@
     <div keyword="app2" class="container">
       <form>
         <div class="form-group">
+
           <!-- <small class="form-text">タイトルまたはキーワードを入力してください。</small> -->
           <input type="text" v-model="keyword" class="form-control" id="id"
            placeholder="タイトルまたはキーワードを入力してください。">
           
           <!-- <button type="submit" class="btn btn-primary">検索</button> -->
+              <!-- <div> -->
+              <input type="radio" id="option1" value="option1" v-model="picked" />
+              <label for="option1">初級</label>
+              
+              <input type="radio" id="option2" value="option2" v-model="picked" />
+              <label for="option2">中級</label>
+              
+              <input type="radio" id="option3" value="option3" v-model="picked" />
+              <label for="option3">上級</label>
+
+            <!-- <div class="form-group form-radio"> -->
+              <!-- <label><input type="radio" v-mode="checklevel" v-bind:value="book.level2">{{ book.level2}}</label> -->
+              <!-- <input type="radiobutton" class="form-radio-input" id="radio"> -->
+              <!-- <label class="form-radio-input" for="radio">radio button</label> -->
+
         </div>
       </form>
     </div>
@@ -143,6 +160,7 @@ export default {
           
     }
   },
+
   methods: {
     moveDetail(num) {
       this.$router.push({
@@ -171,6 +189,18 @@ export default {
 }
 
 </script>
+
+
+Vue.createApp({
+  data: function() {
+    return {
+      picked:''
+    }
+  }
+}).mount('#app')
+
+
+
 
 <style scoped>
 #app {
