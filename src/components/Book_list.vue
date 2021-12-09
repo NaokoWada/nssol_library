@@ -40,20 +40,21 @@
     
     <tbody style="display: block;overflow-y:scroll;height:600px;">
     <tr v-for="book in books" v-bind:key="book.id">
-      <td style="width:150px;"><img :src="book.image"></td>
+      <div v-if="book.title== keyword || book.keyword==keyword"> 
+        <td style="width:150px;"><img :src="book.image"></td>
     
-    <td style="width:150px;">{{book.title}}</td>
-    <td style="width:150px;">{{book.keyword}}</td>
-    <td style="width:150px;">{{book.level}}</td>
-    <td style="width:150px;">{{book.internal}}</td>
-    <td style="width:150px;">{{book.bu}}</td>
+        <td style="width:150px;">{{book.title}}</td>
+        <td style="width:150px;">{{book.keyword}}</td>
+        <td style="width:150px;">{{book.level}}</td>
+        <td style="width:150px;">{{book.internal}}</td>
+        <td style="width:150px;">{{book.bu}}</td>
     
-    <td style="width:150px;"><img :src="book.employee1"></td>
-    <td style="width:150px;">{{book.comment1}}</td>
-    <td style="width:150px;"><img :src="book.employee2"></td>
-    <td style="width:150px;">{{book.comment2}}</td>
+        <td style="width:150px;"><img :src="book.employee1"></td>
+        <td style="width:150px;">{{book.comment1}}</td>
+        <td style="width:150px;"><img :src="book.employee2"></td>
+        <td style="width:150px;">{{book.comment2}}</td>
+      </div>
     </tr>
-
   
 
     
