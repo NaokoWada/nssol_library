@@ -9,6 +9,7 @@
         placeholder="感想を入力してください"
         v-model="inputReview"
       ></textarea>
+      
       <div id="app">
         <star-rating @rating-selected ="setRating" v-model="rating" :increment="0.5" :max-rating="5" inactive-color="#000" active-color="#ff0"></star-rating>
       </div>
@@ -71,6 +72,15 @@ li {
 }
 .tabContents {
   text-align: left;
+}
+.inputForm {
+  position: fixed;
+}
+.reviews {
+  overflow-y: scroll;
+  height: 300px;
+  padding-top: 20px;
+  border: 1px solid black;
 }
 
 .balloon5 {

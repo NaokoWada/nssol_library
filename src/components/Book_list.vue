@@ -44,7 +44,7 @@
         <td style="width:150px;"><img :src="book.image"></td>
     
 
-        <td style="width:150px;"><button @click="moveDetail(1)">{{book.title}}</button></td>
+        <td style="width:150px;"><router-link :to="`/bookList/${book.id}`">{{book.title}}</router-link></td>
         <td style="width:150px;">{{book.keyword}}</td>
         <td style="width:150px;">{{book.level}}</td>
         <td style="width:150px;">{{book.internal}}</td>
@@ -72,7 +72,8 @@ export default {
   data() {
     return {
       books:[
-            {image:require('../assets/datamodel.png'),
+            {id: 1,
+              image:require('../assets/datamodel.png'),
              title:'データモデル大全', 
              internal:'★★★★☆',
              bu:'★★★☆☆',
@@ -82,7 +83,9 @@ export default {
              comment2:'もう少し具体例の難易度を高くすべき',
              keyword:'データモデル',
              level:'初級'},
-            {image:require('../assets/NWhard.png'),
+            {
+              id: 2,
+              image:require('../assets/NWhard.png'),
              title:'ネットワーク', 
              internal:'★★★★☆',
              bu:'★★★☆☆',
@@ -92,7 +95,8 @@ export default {
              comment2:'最新の高度なネットワーク技術について知ることができた',
              keyword:'ネットワーク',
              level:'上級'},
-             {image:require('../assets/NWeasy.png'),
+             {id: 3,
+             image:require('../assets/NWeasy.png'),
              title:'ネットワーク構築＆運用がしっかりわかる教科書', 
              internal:'★★★★★',
              bu:'★★★★★',
@@ -103,6 +107,7 @@ export default {
              keyword:'ネットワーク構築',
              level:'初級'},
             {
+              id: 4,
              image:require('../assets/vendar.png'),
              title:'ベンダーマネージメントの極意',
              internal:'★★★★★',
@@ -114,6 +119,7 @@ export default {
              keyword:'マネジメント',
              level:'中級'},
              {
+               id: 5,
              image:require('../assets/dx.jpg'),
              title:'DXの思考法',
              internal:'★★☆☆☆',
@@ -125,6 +131,7 @@ export default {
              keyword:'DX',
              level:'上級'},
              {
+               id: 6,
              image:require('../assets/NWospf.png'),
              title:'OSPF Complete Implementation',
              internal:'★★★★★',
