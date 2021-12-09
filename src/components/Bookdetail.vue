@@ -26,24 +26,10 @@
             </ul>
             <div class="tabContents">
               <div v-if="isActive === '1'">
-                <textarea
-                  name=""
-                  id=""
-                  cols="30"
-                  rows="10"
-                  placeholder="感想を入力してください"
-                ></textarea>
-                <button>投稿する</button>
+                <BookReview></BookReview>
               </div>
-              <div v-else-if="isActive === '2'">
-                <textarea
-                  name=""
-                  id=""
-                  cols="30"
-                  rows="10"
-                  placeholder="Q＆Aを入力してください"
-                ></textarea>
-                <button>投稿する</button>
+              <div v-if="isActive === '2'">
+                <BookQA></BookQA>
               </div>
             </div>
           </div>
@@ -78,6 +64,9 @@
  
 </template>
 <script>
+import BookReview from './BookReview.vue'
+import BookQA from './BookQA.vue'
+
 export default {
   name: "Bookdetail",
   data() {
@@ -85,7 +74,10 @@ export default {
       isActive: "1",
     };
   },
-  components: {},
+  components: {
+    BookReview,
+    BookQA,
+  },
   methods: {
     isSelect: function (num) {
       this.isActive = num;
@@ -154,6 +146,7 @@ export default {
   height: 300px;
   padding: 20px;
   border: 1px solid green;
+  overflow-y:scroll;
 }
  
 .home {
