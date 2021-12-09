@@ -5,20 +5,21 @@
         <img alt="book img" src="../assets/img.png" />
       </div>
       <div id="bookTitle">
-        <p>{{ books[0].title }}</p>
-        <!-- <p>{{ book.author }}</p>
-        <p>{{ book.publisher }}</p>
+        <!-- <p>{{ books[0].title }}</p>  -->
+        <!-- <p>{{ book.author }}</p>  -->
+        <!-- <p>{{ book.publisher }}</p>
         <p>{{ book.publishYear }}</p>
         <p>{{ book.summary }}</p>
         <p>{{ outline }}</p> -->
-        <!-- <p class="author">著者： 長尾 清一</p>
+        <p class="title">ベンダーマネジメントの極意</p>
+        <p class="author">著者： 長尾 清一</p>
         <p class="publisher">出版社： 日経BP</p>
         <p class="publishYear">出版年： 2009年7月23日</p>
         <p class="summary">
           概要：プロジェクトの成功とスキルアップのために、
           日々現場で奮闘するプロジェクトマネジャーの皆さんにぜひ手にしていただきたい一冊です。
         </p> -->
-        <!-- <p class="outline">目次</p> -->
+        <p class="outline">目次</p> 
       </div>
     </div>
     <table class="detail">
@@ -76,14 +77,7 @@ export default {
   name: "Bookdetail",
   data() {
     return {
-      isActive: "1",
-    };
-  },
-  components: {
-    BookReview,
-    BookQA,
-  },
-  books: [
+        books: [
     {
       id: 1,
       image: require("../assets/datamodel.png"),
@@ -163,6 +157,14 @@ export default {
       level: "上級",
     },
   ],
+
+      isActive: "1",
+    };
+  },
+  components: {
+    BookReview,
+    BookQA,
+  },
   methods: {
     isSelect: function (num) {
       this.isActive = num;
@@ -249,4 +251,4 @@ export default {
 .buttonmenu {
   margin: 10px 30px;
 }
-</style>
+</style> -->
