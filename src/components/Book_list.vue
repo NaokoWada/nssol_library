@@ -19,14 +19,18 @@
           
           <!-- <button type="submit" class="btn btn-primary">検索</button> -->
               <!-- <div> -->
-              <input type="radio" id="option1" value="option1" v-model="picked" />
+              <input type="radio" id="option1" value="" v-model="level" />
+              <label for="option3">全て</label>
+              <input type="radio" id="option2" value="初級" v-model="level" />
               <label for="option1">初級</label>
               
-              <input type="radio" id="option2" value="option2" v-model="picked" />
+              <input type="radio" id="option3" value="中級" v-model="level" />
               <label for="option2">中級</label>
               
-              <input type="radio" id="option3" value="option3" v-model="picked" />
+              <input type="radio" id="option4" value="上級" v-model="level" />
               <label for="option3">上級</label>
+
+              
 
             <!-- <div class="form-group form-radio"> -->
               <!-- <label><input type="radio" v-mode="checklevel" v-bind:value="book.level2">{{ book.level2}}</label> -->
@@ -178,7 +182,7 @@ export default {
         var books = [];
         for(var i in this.books) { 
           var b  = this.books[i];  
-          if(b.keyword.indexOf(this.keyword) !== -1 || b.title.indexOf(this.keyword) !== -1 ){ 
+          if((b.keyword.indexOf(this.keyword) !== -1 || b.title.indexOf(this.keyword) !== -1) && b.level.indexOf(this.level) !== -1){ 
             // || b.level.indexOf(this.level) !== -1
             books.push(b); 
           }
