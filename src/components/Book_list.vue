@@ -89,6 +89,7 @@ export default {
   data() {
     return {
       keyword:"",
+      level:"",
       books:[
             {id:1,
              image:require('../assets/datamodel.png'),
@@ -177,7 +178,8 @@ export default {
         var books = [];
         for(var i in this.books) { 
           var b  = this.books[i];  
-          if(b.keyword.indexOf(this.keyword) !== -1) { 
+          if(b.keyword.indexOf(this.keyword) !== -1 || b.title.indexOf(this.keyword) !== -1 ){ 
+            // || b.level.indexOf(this.level) !== -1
             books.push(b); 
           }
         }
