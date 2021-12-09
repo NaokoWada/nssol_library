@@ -29,7 +29,7 @@
                 <textarea
                   name=""
                   id=""
-                  cols="30"
+                  cols="60"
                   rows="10"
                   placeholder="感想を入力してください"
                 ></textarea>
@@ -39,7 +39,7 @@
                 <textarea
                   name=""
                   id=""
-                  cols="30"
+                  cols="60"
                   rows="10"
                   placeholder="Q＆Aを入力してください"
                 ></textarea>
@@ -134,7 +134,7 @@ export default {
 #tab {
   width: 100%;
   max-width: 500px;
-  margin: 40px 200px 40px 300px;
+  margin: 40px 200px 40px 350px;
 }
  
 .tabMenu {
@@ -150,9 +150,9 @@ export default {
 }
  
 .tabContents {
-  width: 600px;
+  width: 500px;
   height: 300px;
-  padding: 20px;
+  padding: 20px 60px ;
   border: 1px solid green;
 }
  
@@ -161,9 +161,10 @@ export default {
 }
  
 .example li{
+  float: left;
   list-style: none;
   padding: 0;
-  margin: 30px;
+  margin: 30px 50px;
   padding: auto;
  
 }
