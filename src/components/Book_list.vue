@@ -1,8 +1,15 @@
 <template>
+
   <div id="app">
-    
+    <head>
+      <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+    </head>
     <div class="mainbody">
-     <tytle><font size="7" color="black" background-color="red">本の一覧</font><font size="4" color="black">-現在登録されている本は 6 冊です-</font></tytle>
+     <tytle class="wf-notosansjapanese">
+       <font size="7" color="black">本の一覧</font>
+       <font size="4" color="black">
+         -現在登録されている本は 6 冊です-
+       </font></tytle>
     </div>
     
     <table border="1" style="border-collapse: collapse;">
@@ -11,11 +18,34 @@
     <div keyword="app2" class="container">
       <form>
         <div class="form-group">
-          <label for="Keyword">タイトルorキーワード</label>
-            <input type="text" class="form-control" id="id"
-              placeholder="タイトルまたはキーワードを入力">
-            <small class="form-text">タイトルまたはキーワードを入力してください。</small>
-          <button type="submit" class="btn btn-primary">検索</button>
+
+          <!-- <small class="form-text">タイトルまたはキーワードを入力してください。</small> -->
+          <input type="text" v-model="keyword" class="form-control" id="id"
+           placeholder="タイトルまたはキーワードを入力してください。">
+          
+          <!-- <button type="submit" class="btn btn-primary">検索</button> -->
+              <!-- <div> -->
+
+              <input class="visually-hidden" type="radio" id="option1" value="" v-model="level" />
+              <label for="option1">全て</label>
+
+              <input class="visually-hidden" type="radio" id="option2" value="初級" v-model="level" />
+              <label for="option2">初級</label>
+              
+              <input class="visually-hidden" type="radio" id="option3" value="中級" v-model="level" />
+              <label for="option3">中級</label>
+              
+              <input class="visually-hidden" type="radio" id="option4" value="上級" v-model="level" />
+              <label for="option4">上級</label>
+
+
+              
+
+            <!-- <div class="form-group form-radio"> -->
+              <!-- <label><input type="radio" v-mode="checklevel" v-bind:value="book.level2">{{ book.level2}}</label> -->
+              <!-- <input type="radiobutton" class="form-radio-input" id="radio"> -->
+              <!-- <label class="form-radio-input" for="radio">radio button</label> -->
+
         </div>
       </form>
     </div>
@@ -39,8 +69,10 @@
     </thead>
     
     <tbody style="display: block;overflow-y:scroll;height:600px;">
-    <tr v-for="book in books" v-bind:key="book.id">
-      <!-- <div v-if="book.title== keyword || book.keyword==keyword">  -->
+
+    <tr v-for="book in filteredbooks" v-bind:key="book.id">
+      <!--<div v-if="book.title== keyword || book.keyword==keyword">-->         
+
         <td style="width:150px;"><img :src="book.image"></td>
     
 
@@ -54,7 +86,9 @@
         <td style="width:150px;">{{book.comment1}}</td>
         <td style="width:150px;"><img :src="book.employee2"></td>
         <td style="width:150px;">{{book.comment2}}</td>
-      <!-- </div> -->
+
+      <!--</div>--> 
+
 
     </tr>
   
@@ -71,7 +105,10 @@
 export default {
   data() {
     return {
+      keyword:"",
+      level:"",
       books:[
+
             {id: 1,
               image:require('../assets/datamodel.png'),
              title:'データモデル大全', 
@@ -95,7 +132,7 @@ export default {
              comment2:'最新の高度なネットワーク技術について知ることができた',
              keyword:'ネットワーク',
              level:'上級'},
-             {id: 3,
+             {id:3,
              image:require('../assets/NWeasy.png'),
              title:'ネットワーク構築＆運用がしっかりわかる教科書', 
              internal:'★★★★★',
@@ -146,6 +183,7 @@ export default {
           
     }
   },
+
   methods: {
     moveDetail(num) {
       this.$router.push({
@@ -155,11 +193,30 @@ export default {
         }
       })
     }
-  }
+  },
+
+  computed: {
+      filteredbooks: function() {
+        var books = [];
+        for(var i in this.books) { 
+          var b  = this.books[i];  
+          if((b.keyword.indexOf(this.keyword) !== -1 || b.title.indexOf(this.keyword) !== -1) && b.level.indexOf(this.level) !== -1){ 
+            // || b.level.indexOf(this.level) !== -1
+            books.push(b); 
+          }
+        }
+        return books; 
+      }
+    }
+
+
 }
+
 </script>
 
 <style scoped>
+.wf-notosansjapanese { font-family: "Noto Sans JP"; }
+
 #app {
 
   text-align: center;
@@ -173,5 +230,65 @@ export default {
    vertical-align: top;
  }
 
+ .form-control{
+   width:25%;
+    margin-right: auto;
+    padding:15px 0;
+    margin-bottom:15px;
+    background-color:whitesmoke;
+ }
+
+ label {
+  cursor: pointer;
+  padding-left: 30px;
+  position: relative;
+}
+
+
+label::before,
+label::after {
+  content: "";
+  display: block; 
+  position: absolute;
+}
+
+label::before {
+  background-color: whitesmoke;
+  border-radius: 0%;
+  border: 1px solid #ddd;
+  width: 20px;
+  height: 20px;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 5px;
+}
+
+label::after {
+  border-bottom: 2px solid rgb(248, 6, 6);
+  border-left: 2px solid rgb(248, 6, 6);
+  opacity: 0;
+  height: 5px;
+  width: 10px;
+  transform: rotate(-45deg);
+  top: 2px;
+  left: 10px;
+}
+
+input:checked + label::after {
+  opacity: 1;
+}
+
+.visually-hidden {
+ position: absolute;
+ white-space: nowrap;
+ border: 0;
+ clip: rect(0 0 0 0);
+ clip-path: inset(50%);
+ overflow: hidden;
+ height: 1px;
+ width: 1px;
+ margin: -1px;
+ padding: 0;
+}
  
 </style>

@@ -72,7 +72,7 @@ export default {
   data() {
     return {
         books: books,
-        isActive: "1",
+        isActive: "1"
     };
   },
   components: {
