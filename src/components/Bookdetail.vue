@@ -5,7 +5,6 @@
         <img alt="book img" :src="findBook.image" />
       </div>
       <div id="bookTitle">
-<<<<<<< HEAD
         <p class="title">{{findBook.title}}</p>
         <p class="author">著者： {{findBook.auther}}</p>
         <p class="publisher">出版社： {{findBook.pubulisher}}</p>
@@ -14,23 +13,6 @@
           概要：{{findBook.summary}}
         </p>
         <p class="outline">目次</p>
-=======
-        <!-- <p>{{ books[0].title }}</p>  -->
-        <!-- <p>{{ book.author }}</p>  -->
-        <!-- <p>{{ book.publisher }}</p>
-        <p>{{ book.publishYear }}</p>
-        <p>{{ book.summary }}</p>
-        <p>{{ outline }}</p> -->
-        <p class="title">ベンダーマネジメントの極意</p>
-        <p class="author">著者： 長尾 清一</p>
-        <p class="publisher">出版社： 日経BP</p>
-        <p class="publishYear">出版年： 2009年7月23日</p>
-        <p class="summary">
-          概要：プロジェクトの成功とスキルアップのために、
-          日々現場で奮闘するプロジェクトマネジャーの皆さんにぜひ手にしていただきたい一冊です。
-        </p> -->
-        <p class="outline">目次</p> 
->>>>>>> 0a35737f7ea0d080e554bec6d4615cfe9ed6dcc7
       </div>
     </div>
     <table class="detail">
