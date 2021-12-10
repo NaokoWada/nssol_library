@@ -55,16 +55,12 @@
     <tr>
     
     <th style="width:150px;"></th><!-- 空欄用 -->
-    <th style="width:150px;">タイトル</th>
     <th style="width:150px;">キーワード</th>
     <th style="width:150px;">読みやすさ</th>
     <th style="width:150px;">社内評価</th>
     <th style="width:150px;">BU評価</th>
     
-    <th style="width:150px;">社員A</th>
-    <th style="width:150px;">感想</th>
-    <th style="width:150px;">社員B</th>
-    <th style="width:150px;">感想</th>
+    <th style="width:440px;">読んだ人</th>
     </tr>
     </thead>
     
@@ -73,20 +69,31 @@
     <tr v-for="book in filteredbooks" v-bind:key="book.id">
       <!--<div v-if="book.title== keyword || book.keyword==keyword">-->         
 
-        <td style="width:150px;"><img :src="book.image"></td>
+        <td style="width:150px;"><router-link :to="`/bookList/${book.id}`"><img :src="book.image">
+        <br>{{book.title}}</router-link>
     
 
-        <td style="width:150px;"><router-link :to="`/bookList/${book.id}`">{{book.title}}</router-link></td>
+        
         <td style="width:150px;">{{book.keyword}}</td>
         <td style="width:150px;">{{book.level}}</td>
         <td style="width:150px;">{{book.internal}}</td>
         <td style="width:150px;">{{book.bu}}</td>
     
-        <td style="width:150px;"><img :src="book.employee1"></td>
-        <td style="width:150px;">{{book.comment1}}</td>
-        <td style="width:150px;"><img :src="book.employee2"></td>
-        <td style="width:150px;">{{book.comment2}}</td>
+        <td style="width:440px;">
+          <ul class="example">
+              <li>
+                <img alt="user img" :src="book.employee1" />
+                <br />
+                <button class="buttonmenu" v-on:click="home">感想を見る</button>
+              </li>
 
+              <li>
+                <img alt="user img" :src="book.employee2" />
+                <br />
+                <button class="buttonmenu" v-on:click="home">感想を見る</button>
+              </li>
+          </ul>
+        </td>
       <!--</div>--> 
 
 
@@ -290,5 +297,12 @@ input:checked + label::after {
  margin: -1px;
  padding: 0;
 }
- 
+
+.example li {
+  float: left;
+  list-style: none;
+  padding: 0;
+  margin: 30px 50px;
+}
+
 </style>
