@@ -12,7 +12,7 @@
        </font></tytle>
     </div>
     
-    <table border="1" style="border-collapse: collapse;">
+    <table border="1" style="border-collapse: collapse; width:1800px;">
     <thead>
     <tr>
     <div keyword="app2" class="container">
@@ -61,10 +61,10 @@
     <th style="width:150px;">社内評価</th>
     <th style="width:150px;">BU評価</th>
     
-    <th style="width:150px;">社員A</th>
-    <th style="width:150px;">感想</th>
-    <th style="width:150px;">社員B</th>
-    <th style="width:150px;">感想</th>
+    <th style="width:300px;">高評価した人</th>
+    <!-- <th style="width:150px;">感想</th> -->
+    <th style="width:300px;">キーワード一致</th>
+    <!-- <th style="width:150px;">感想</th> -->
     </tr>
     </thead>
     
@@ -82,10 +82,10 @@
         <td style="width:150px;">{{book.internal}}</td>
         <td style="width:150px;">{{book.bu}}</td>
     
-        <td style="width:150px;"><img :src="book.employee1"></td>
-        <td style="width:150px;">{{book.comment1}}</td>
-        <td style="width:150px;"><img :src="book.employee2"></td>
-        <td style="width:150px;">{{book.comment2}}</td>
+        <td style="width:300px;"><img :src="book.employee1"></td>
+        
+        <td style="width:300px;"><img :src="book.employee2"></td>
+        
 
       <!--</div>--> 
 
@@ -118,19 +118,19 @@ export default {
              comment1:'データモデリングの実務上の具体例がわかりやすい！',
              employee2:require('../assets/mask_woman6_medical.png'),
              comment2:'もう少し具体例の難易度を高くすべき',
-             keyword:'データモデル',
+             keyword:'データモデル,DX,システム開発,基礎技術',
              level:'初級'},
             {
               id: 2,
               image:require('../assets/NWhard.png'),
-             title:'ネットワーク', 
+             title:'ネットワーク技術', 
              internal:'★★★★☆',
              bu:'★★★☆☆',
              employee1:require('../assets/mask_woman5_faceshield.png'),
              comment1:'前提知識がある程度必要だと感じた。いい本',
              employee2:require('../assets/mask_woman6_medical.png'),
              comment2:'最新の高度なネットワーク技術について知ることができた',
-             keyword:'ネットワーク',
+             keyword:'ネットワーク,専門',
              level:'上級'},
              {id:3,
              image:require('../assets/NWeasy.png'),
@@ -141,7 +141,7 @@ export default {
              comment1:'図が豊富に使われており分かりやすかった',
              employee2:require('../assets/mask_woman6_medical.png'),
              comment2:'初心者でもわかりやすいように説明だった',
-             keyword:'ネットワーク構築',
+             keyword:'ネットワーク,構築,運用,教科書',
              level:'初級'},
             {
               id: 4,
@@ -153,7 +153,7 @@ export default {
              comment1:'ためになりました！',
              employee2:require('../assets/mask_woman6_medical.png'),
              comment2:'そんなに読む価値なし！',
-             keyword:'マネジメント',
+             keyword:'ベンダー,マネジメント',
              level:'中級'},
              {
                id: 5,
@@ -165,7 +165,7 @@ export default {
              comment1:'上級者向け',
              employee2:require('../assets/mask_woman6_medical.png'),
              comment2:'知りたいことが書いてなかった',
-             keyword:'DX',
+             keyword:'DX,経済',
              level:'上級'},
              {
                id: 6,
@@ -177,7 +177,7 @@ export default {
              comment1:'OSPFについて詳しく知りたい人にはとてもオススメの本です！',
              employee2:require('../assets/mask_woman6_medical.png'),
              comment2:'OSPFについて完璧に理解できる。ただし内容は英語',
-             keyword:'OSPF',
+             keyword:'OSPF,ルーティング',
              level:'上級'}
              ]
           
