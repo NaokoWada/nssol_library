@@ -1,27 +1,16 @@
 <template>
   <div id="app">
-    <div class="header-content">
-    <header>
-      <h1>
-        <a href="/">NSSOL 図書館</a>
-      </h1>
-      <nav class="pc-nav">
-        <ul>
-          <li><router-link to="/">ホーム</router-link></li>
-          <li><router-link to="/bookList">本の一覧</router-link></li>
-        </ul>
-      </nav>
-    </header>
+    <Header></Header>
     <router-view/>
-  </div>
   </div>
 </template>
 <script>
-
+import Header from './components/Header.vue'
 
 export default {
   name: "App",
   components: {
+    Header
   },
 };
  
@@ -37,5 +26,6 @@ export default {
     margin-right: 0;
  
 }
+
 
 </style>
