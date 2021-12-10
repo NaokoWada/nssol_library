@@ -5,6 +5,7 @@
         <img alt="book img" :src="findBook.image" />
       </div>
       <div id="bookTitle">
+<<<<<<< HEAD
         <p class="title">{{findBook.title}}</p>
         <p class="author">著者： {{findBook.auther}}</p>
         <p class="publisher">出版社： {{findBook.pubulisher}}</p>
@@ -13,6 +14,23 @@
           概要：{{findBook.summary}}
         </p>
         <p class="outline">目次</p>
+=======
+        <!-- <p>{{ books[0].title }}</p>  -->
+        <!-- <p>{{ book.author }}</p>  -->
+        <!-- <p>{{ book.publisher }}</p>
+        <p>{{ book.publishYear }}</p>
+        <p>{{ book.summary }}</p>
+        <p>{{ outline }}</p> -->
+        <p class="title">ベンダーマネジメントの極意</p>
+        <p class="author">著者： 長尾 清一</p>
+        <p class="publisher">出版社： 日経BP</p>
+        <p class="publishYear">出版年： 2009年7月23日</p>
+        <p class="summary">
+          概要：プロジェクトの成功とスキルアップのために、
+          日々現場で奮闘するプロジェクトマネジャーの皆さんにぜひ手にしていただきたい一冊です。
+        </p> -->
+        <p class="outline">目次</p> 
+>>>>>>> 0a35737f7ea0d080e554bec6d4615cfe9ed6dcc7
       </div>
     </div>
     <table class="detail">
@@ -71,8 +89,88 @@ export default {
   name: "Bookdetail",
   data() {
     return {
+        books: [
+    {
+      id: 1,
+      image: require("../assets/datamodel.png"),
+      title: "データモデル大全",
+      internal: "★★★★☆",
+      bu: "★★★☆☆",
+      employee1: require("../assets/mask_woman5_faceshield.png"),
+      comment1: "データモデリングの実務上の具体例がわかりやすい！",
+      employee2: require("../assets/mask_woman6_medical.png"),
+      comment2: "もう少し具体例の難易度を高くすべき",
+      keyword: "データモデル",
+      level: "初級",
+    },
+    {
+      id: 2,
+      image: require("../assets/NWhard.png"),
+      title: "ネットワーク",
+      internal: "★★★★☆",
+      bu: "★★★☆☆",
+      employee1: require("../assets/mask_woman5_faceshield.png"),
+      comment1: "前提知識がある程度必要だと感じた。いい本",
+      employee2: require("../assets/mask_woman6_medical.png"),
+      comment2: "最新の高度なネットワーク技術について知ることができた",
+      keyword: "ネットワーク",
+      level: "上級",
+    },
+    {
+      id: 3,
+      image: require("../assets/NWeasy.png"),
+      title: "ネットワーク構築＆運用がしっかりわかる教科書",
+      internal: "★★★★★",
+      bu: "★★★★★",
+      employee1: require("../assets/mask_woman5_faceshield.png"),
+      comment1: "図が豊富に使われており分かりやすかった",
+      employee2: require("../assets/mask_woman6_medical.png"),
+      comment2: "初心者でもわかりやすいように説明だった",
+      keyword: "ネットワーク構築",
+      level: "初級",
+    },
+    {
+      id: 4,
+      image: require("../assets/vendar.png"),
+      title: "ベンダーマネージメントの極意",
+      internal: "★★★★★",
+      bu: "★★★★☆",
+      employee1: require("../assets/mask_woman5_faceshield.png"),
+      comment1: "ためになりました！",
+      employee2: require("../assets/mask_woman6_medical.png"),
+      comment2: "そんなに読む価値なし！",
+      keyword: "マネジメント",
+      level: "中級",
+    },
+    {
+      id: 5,
+      image: require("../assets/dx.jpg"),
+      title: "DXの思考法",
+      internal: "★★☆☆☆",
+      bu: "★★★☆☆",
+      employee1: require("../assets/mask_woman5_faceshield.png"),
+      comment1: "上級者向け",
+      employee2: require("../assets/mask_woman6_medical.png"),
+      comment2: "知りたいことが書いてなかった",
+      keyword: "DX",
+      level: "上級",
+    },
+    {
+      id: 6,
+      image: require("../assets/NWospf.png"),
+      title: "OSPF Complete Implementation",
+      internal: "★★★★★",
+      bu: "★★★★★",
+      employee1: require("../assets/mask_woman5_faceshield.png"),
+      comment1: "OSPFについて詳しく知りたい人にはとてもオススメの本です！",
+      employee2: require("../assets/mask_woman6_medical.png"),
+      comment2: "OSPFについて完璧に理解できる。ただし内容は英語",
+      keyword: "OSPF",
+      level: "上級",
+    },
+  ],
+
       isActive: "1",
-      books : books
     };
   },
   components: {
