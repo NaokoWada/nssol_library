@@ -8,7 +8,7 @@ Vue.use(VueRouter);
 
 const routes = [
     {path: '/bookList', component: BookList},
-    {path: '/bookList/:id', name: "Bookdetail", component: Bookdetail},
+    {path: '/bookList/:id', name: "Bookdetail", component: Bookdetail, props: true},
     {path: '/', component: BookList},
 ]
 

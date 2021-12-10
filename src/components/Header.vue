@@ -6,11 +6,11 @@
       </h1>
       <nav class="pc-nav">
         <ul>
-          <li><router-link to="">ホーム</router-link></li>
-          <li><router-link to="">本の一覧</router-link></li>
+          <li><router-link to="/bookList">本の一覧</router-link></li>
         </ul>
       </nav>
     </header>
+    <!-- <router-view/> -->
   </div>
 </template>
 
@@ -19,12 +19,12 @@ export default {};
 </script>
 
 <style>
-/* .header-content {
+.header-content {
    margin: 0;
    padding: 0;
    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
    background-color: #e6e6e6;
-} */
+}
 header {
    padding: 30px 4% 10px;
    top: 0;
