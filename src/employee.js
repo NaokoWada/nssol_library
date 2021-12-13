@@ -1,5 +1,6 @@
 const employee = [
            {id:1,
+           icon:require('./assets/employee1.png'),
            Name:'多田 孝和',
            Organization1:'技術本部',
            Organization2:'',
@@ -12,7 +13,7 @@ const employee = [
            ITSS1level   :'4',
            ITSS2        :'Application Specialist',
            ITSS2level   :'4',
-           Skill        :'プロジェクトマネージメント','データ連携','運用設計','給与計算','年末調整','賞与計算','タレントマネージメント','勤務管理','C##','ワークフロー','Sharepoint',
+           Skill        :'プロジェクトマネージメント','マネージメント','データ連携','運用設計','給与計算','年末調整','タレントマネージメント','勤務管理','ベンダー管理','ワークフロー','Sharepoint',
                          'Intramart',
            Career1      :'2010年4月商社系Sier入社',
            Career2      :'2010年4月～8月新人研修',
