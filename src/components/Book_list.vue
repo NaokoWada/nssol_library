@@ -11,8 +11,7 @@
         <font size="7" color="black">本の一覧</font>
         <font size="4" color="black">
           -現在登録されている本は 6 冊です-
-        </font></tytle
-      >
+        </font></tytle>
     </div>
 
     <table border="1" style="border-collapse: collapse">
@@ -109,7 +108,7 @@
           <td style="width: 440px">
             <ul class="example">
               <li>
-                <img alt="user img" :src="book.employee1" />
+                <router-link :to="`/employee/1`"><img :src="book.employee1"></router-link>
                 <br />
                 <button class="buttonmenu" v-on:click="openModal(book)">
                   感想を見る
@@ -145,90 +144,85 @@ export default {
       modal: false,
       modal2: false,
       message: "",
-      keyword: "",
-      level: "",
+      keyword:"",
+      level:"",
       postBook: "",
-      books: [
-        {
-          id: 1,
-          image: require("../assets/datamodel.png"),
-          title: "データモデル大全",
-          internal: "★★★★☆",
-          bu: "★★★☆☆",
-          employee1: require("../assets/mask_woman5_faceshield.png"),
-          comment1: "データモデリングの実務上の具体例がわかりやすい！",
-          employee2: require("../assets/mask_woman6_medical.png"),
-          comment2: "もう少し具体例の難易度を高くすべき",
-          keyword: "データモデル",
-          level: "初級",
-        },
-        {
-          id: 2,
-          image: require("../assets/NWhard.png"),
-          title: "ネットワーク",
-          internal: "★★★★☆",
-          bu: "★★★☆☆",
-          employee1: require("../assets/mask_woman5_faceshield.png"),
-          comment1: "前提知識がある程度必要だと感じた。いい本",
-          employee2: require("../assets/mask_woman6_medical.png"),
-          comment2: "最新の高度なネットワーク技術について知ることができた",
-          keyword: "ネットワーク",
-          level: "上級",
-        },
-        {
-          id: 3,
-          image: require("../assets/NWeasy.png"),
-          title: "ネットワーク構築＆運用がしっかりわかる教科書",
-          internal: "★★★★★",
-          bu: "★★★★★",
-          employee1: require("../assets/mask_woman5_faceshield.png"),
-          comment1: "図が豊富に使われており分かりやすかった",
-          employee2: require("../assets/mask_woman6_medical.png"),
-          comment2: "初心者でもわかりやすいように説明だった",
-          keyword: "ネットワーク構築",
-          level: "初級",
-        },
-        {
-          id: 4,
-          image: require("../assets/vendar.png"),
-          title: "ベンダーマネージメントの極意",
-          internal: "★★★★★",
-          bu: "★★★★☆",
-          employee1: require("../assets/mask_woman5_faceshield.png"),
-          comment1: "ためになりました！",
-          employee2: require("../assets/mask_woman6_medical.png"),
-          comment2: "そんなに読む価値なし！",
-          keyword: "マネジメント",
-          level: "中級",
-        },
-        {
-          id: 5,
-          image: require("../assets/dx.jpg"),
-          title: "DXの思考法",
-          internal: "★★☆☆☆",
-          bu: "★★★☆☆",
-          employee1: require("../assets/mask_woman5_faceshield.png"),
-          comment1: "上級者向け",
-          employee2: require("../assets/mask_woman6_medical.png"),
-          comment2: "知りたいことが書いてなかった",
-          keyword: "DX",
-          level: "上級",
-        },
-        {
-          id: 6,
-          image: require("../assets/NWospf.png"),
-          title: "OSPF Complete Implementation",
-          internal: "★★★★★",
-          bu: "★★★★★",
-          employee1: require("../assets/mask_woman5_faceshield.png"),
-          comment1: "OSPFについて詳しく知りたい人にはとてもオススメの本です！",
-          employee2: require("../assets/mask_woman6_medical.png"),
-          comment2: "OSPFについて完璧に理解できる。ただし内容は英語",
-          keyword: "OSPF",
-          level: "上級",
-        },
-      ],
-    };
+      books:[
+
+            {id: 1,
+              image:require('../assets/datamodel.png'),
+             title:'データモデル大全', 
+             internal:'★★★★☆',
+             bu:'★★★☆☆',
+             employee1:require('../assets/mask_woman5_faceshield.png'),
+             comment1:'データモデリングの実務上の具体例がわかりやすい！',
+             employee2:require('../assets/mask_woman6_medical.png'),
+             comment2:'もう少し具体例の難易度を高くすべき',
+             keyword:'データモデル,DX,システム開発,基礎技術',
+             level:'初級'},
+            {
+              id: 2,
+              image:require('../assets/NWhard.png'),
+             title:'ネットワーク技術', 
+             internal:'★★★★☆',
+             bu:'★★★☆☆',
+             employee1:require('../assets/mask_woman5_faceshield.png'),
+             comment1:'前提知識がある程度必要だと感じた。いい本',
+             employee2:require('../assets/mask_woman6_medical.png'),
+             comment2:'最新の高度なネットワーク技術について知ることができた',
+             keyword:'ネットワーク,専門',
+             level:'上級'},
+             {id:3,
+             image:require('../assets/NWeasy.png'),
+             title:'ネットワーク構築＆運用がしっかりわかる教科書', 
+             internal:'★★★★★',
+             bu:'★★★★★',
+             employee1:require('../assets/mask_woman5_faceshield.png'),
+             comment1:'図が豊富に使われており分かりやすかった',
+             employee2:require('../assets/mask_woman6_medical.png'),
+             comment2:'初心者でもわかりやすいように説明だった',
+             keyword:'ネットワーク,構築,運用,教科書',
+             level:'初級'},
+            {
+              id: 4,
+             image:require('../assets/vendar.png'),
+             title:'ベンダーマネージメントの極意',
+             internal:'★★★★★',
+             bu:'★★★★☆',
+             employee1:require('../assets/mask_woman5_faceshield.png'),
+             comment1:'ためになりました！',
+             employee2:require('../assets/mask_woman6_medical.png'),
+             comment2:'そんなに読む価値なし！',
+             keyword:'ベンダー,マネジメント',
+             level:'中級'},
+             {
+               id: 5,
+             image:require('../assets/dx.jpg'),
+             title:'DXの思考法',
+             internal:'★★☆☆☆',
+             bu:'★★★☆☆',
+             employee1:require('../assets/mask_woman5_faceshield.png'),
+             comment1:'上級者向け',
+             employee2:require('../assets/mask_woman6_medical.png'),
+             comment2:'知りたいことが書いてなかった',
+             keyword:'DX,経済',
+             level:'上級'},
+             {
+               id: 6,
+             image:require('../assets/NWospf.png'),
+             title:'OSPF Complete Implementation',
+             internal:'★★★★★',
+             bu:'★★★★★',
+             employee1:require('../assets/mask_woman5_faceshield.png'),
+             comment1:'OSPFについて詳しく知りたい人にはとてもオススメの本です！',
+             employee2:require('../assets/mask_woman6_medical.png'),
+             comment2:'OSPFについて完璧に理解できる。ただし内容は英語',
+             keyword:'OSPF,ルーティング',
+             level:'上級'}
+             ]
+          
+    }
+
   },
 
   methods: {
