@@ -10,7 +10,7 @@
         </div>
         <footer class="modal-footer">
           <slot name="footer">
-            <button @click="$emit('close')">Close</button>
+            <button @click="$emit('close',val.id)">Close</button>
           </slot>
         </footer>
       </div>
@@ -36,7 +36,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .modal-window {

@@ -14,7 +14,7 @@
         </font></tytle>
     </div>
 
-    <table border="1" style="border-collapse: collapse">
+    <table class="tablestyle" border="1" style="border-collapse: collapse; width: 2200px; ">
       <thead>
         <tr>
           <div keyword="app2" class="container">
@@ -77,43 +77,43 @@
           </div>
         </tr>
       </thead>
-      <thead style="display: block">
+      <thead style="display: block; margin: 0 260px 0 260px">
         <tr>
-          <th style="width: 150px"></th>
+          <th style="width: 200px"></th>
           <!-- 空欄用 -->
-          <th style="width: 150px">キーワード</th>
-          <th style="width: 150px">読みやすさ</th>
-          <th style="width: 150px">社内評価</th>
-          <th style="width: 150px">BU評価</th>
+          <th style="width: 200px">キーワード</th>
+          <th style="width: 200px">読みやすさ</th>
+          <th style="width: 200px">社内評価</th>
+          <th style="width: 200px">BU評価</th>
 
           <th style="width: 440px">読んだ人</th>
         </tr>
       </thead>
 
-      <tbody style="display: block; overflow-y: scroll; height: 600px">
+      <tbody class="tbody" style="display: block; overflow-y: scroll; height: 800px;">
         <tr v-for="book in filteredbooks" v-bind:key="book.id">
           <!--<div v-if="book.title== keyword || book.keyword==keyword">-->
 
-          <td style="width: 150px">
+          <td style="width: 200px">
             <router-link :to="`/bookList/${book.id}`"
               ><img :src="book.image" /> <br />{{ book.title }}</router-link
             >
           </td>
 
-          <td style="width: 150px">{{ book.keyword }}</td>
-          <td style="width: 150px">{{ book.level }}</td>
-          <td style="width: 150px">{{ book.internal }}</td>
-          <td style="width: 150px">{{ book.bu }}</td>
+          <td style="width: 200px">{{ book.keyword }}</td>
+          <td style="width: 200px">{{ book.level }}</td>
+          <td style="width: 200px">{{ book.internal }}</td>
+          <td style="width: 200px">{{ book.bu }}</td>
 
           <td style="width: 440px">
             <ul class="example">
               <li>
                 <router-link :to="`/employee/1`"><img :src="book.employee1"></router-link>
                 <br />
-                <button class="buttonmenu" v-on:click="openModal(book)">
+                <button class="buttonmenu" v-on:click="openModal(book.id,book)">
                   感想を見る
                 </button>
-                <MyModal :val="postBook" :commentId=1 @close="closeModal" v-if="modal">
+                <MyModal :val="postBook" :commentId=1 @close="closeModal" v-if="modal[book.id-1]">
                 </MyModal>
               </li>
 
@@ -141,7 +141,7 @@ export default {
   components: { MyModal },
   data() {
     return {
-      modal: false,
+      modal: [],
       modal2: false,
       message: "",
       keyword:"",
@@ -226,16 +226,21 @@ export default {
   },
 
   methods: {
-    openModal(book) {
-      this.modal = true;
+    openModal(id,book) {
+      this.modal[id-1] = true;
       this.postBook = book
+      console.log(this.modal);
+      // v-ifは上記だと配列の変更を認識できないため .spliceを使用する
+      this.modal.splice();
     },
     openModal2(book) {
       this.modal2 = true;
       this.postBook = book
     },
-    closeModal() {
-      this.modal = false;
+    closeModal(id) {
+      this.modal[id-1] = false;
+      console.log(this.modal);
+      this.modal.splice();
     },
     closeModal2() {
       this.modal2 = false;
@@ -268,6 +273,12 @@ export default {
       return books;
     },
   },
+
+  created: function() {
+    const a = Array(this.books.length).fill(false)
+    this.modal = a
+    console.log(this.modal)
+  }
 };
 </script>
 
@@ -281,17 +292,30 @@ export default {
   margin-left: auto;
   margin-right: auto;
 }
+
+table tr:nth-child(even){
+  background-color: #eee
+}
 .mainbody {
   background-image: url(../assets/haikei.png);
   text-align: center;
   vertical-align: top;
+  width: 2200px;
+  margin: 0 150px;
+}
+
+.tbody {
+  margin: 0 260px;
+}
+
+.tablestyle {
+  margin: 0 150px;
 }
 
 .form-control {
   width: 25%;
-  margin-right: auto;
+  margin: 15px auto;
   padding: 15px 0;
-  margin-bottom: 15px;
   background-color: whitesmoke;
 }
 
