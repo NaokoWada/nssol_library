@@ -384,7 +384,7 @@ table tr:nth-child(even){
   text-align: center;
   vertical-align: top;
   width: 2200px;
-  margin: 0 150px;
+  margin: 0 300px;
 }
 
 .tbody {
@@ -392,7 +392,7 @@ table tr:nth-child(even){
 }
 
 .tablestyle {
-  margin: 0 150px;
+  margin: 0 300px;
 }
 
 .form-control {
