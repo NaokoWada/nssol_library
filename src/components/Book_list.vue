@@ -111,9 +111,10 @@
                   <ul v-for="emp in filteredemps(book.keyword)" v-bind:key="emp.id">
                     <li>
                       <router-link :to="`/employee/1`">
+                        <p>{{emp.Name}}</p>
                         <img :src="emp.Icon">
                       </router-link>
-                      <button class="buttonmenu" v-on:click="openModal(book)">
+                      <button class="buttonmenu" v-on:click="openModal(book.id,book)">
                         感想を見る
                       </button>
                       <MyModal :val="postBook" :commentId=1 @close="closeModal" v-if="modal[book.id-1]">
@@ -122,7 +123,7 @@
                   </ul>
                 <br />  
               </li>
-              <li>
+              <!-- <li>
                 <img alt="user img" :src="book.employee2" />
                 <br />
                 <button class="buttonmenu" v-on:click="openModal2(book)">
@@ -130,7 +131,7 @@
                 </button>
                 <MyModal :val="postBook"  :commentId=2 @close="closeModal2" v-if="modal2">
                 </MyModal>
-              </li>
+              </li> -->
             </ul>
           </td>
           <!--</div>-->
@@ -231,7 +232,7 @@ export default {
       employees : [
            {id:1,
            Icon:require('../assets/emp4.png'),
-           Name:'多田 孝和',
+           Name:'島侑奈',
            Organization1:'技術本部',
            Organization2:'',
            Organization3:'情報システム部',
@@ -273,7 +274,18 @@ export default {
            },
            {id:2,
            Icon:require('../assets/emp2.png'),
+           Name:'多田孝和',
            Skillemp     :'ネットワーク',
+           },
+           {id:3,
+           Icon:require('../assets/Specialist.png'),
+           Name:'松井允希',
+           Skillemp     :'マネジメント',
+           },
+           {id:4,
+           Icon:require('../assets/emp3.png'),
+           Name:'和田奈央子',
+           Skillemp     :'ルーティング',
            },
            ]
            
