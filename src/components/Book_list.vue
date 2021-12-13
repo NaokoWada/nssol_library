@@ -111,22 +111,20 @@
               <li>
                 <img alt="user img" :src="book.employee1" />
                 <br />
-                <button class="buttonmenu" v-on:click="openModal">
+                <button class="buttonmenu" v-on:click="openModal(book)">
                   感想を見る
                 </button>
-                <MyModal @close="closeModal" v-if="modal">
-                  <p>{{ book.comment1 }}</p>
+                <MyModal :val="postBook" :commentId=1 @close="closeModal" v-if="modal">
                 </MyModal>
               </li>
 
               <li>
                 <img alt="user img" :src="book.employee2" />
                 <br />
-                <button class="buttonmenu" v-on:click="openModal2">
+                <button class="buttonmenu" v-on:click="openModal2(book)">
                   感想を見る
                 </button>
-                <MyModal @close="closeModal2" v-if="modal2">
-                  <p>{{ book.comment2 }}</p>
+                <MyModal :val="postBook"  :commentId=2 @close="closeModal2" v-if="modal2">
                 </MyModal>
               </li>
             </ul>
@@ -149,6 +147,7 @@ export default {
       message: "",
       keyword: "",
       level: "",
+      postBook: "",
       books: [
         {
           id: 1,
@@ -233,11 +232,13 @@ export default {
   },
 
   methods: {
-    openModal() {
+    openModal(book) {
       this.modal = true;
+      this.postBook = book
     },
-    openModal2() {
+    openModal2(book) {
       this.modal2 = true;
+      this.postBook = book
     },
     closeModal() {
       this.modal = false;
