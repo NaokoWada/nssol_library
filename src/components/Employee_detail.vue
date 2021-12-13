@@ -22,10 +22,8 @@
         <p class="Career3">{{employee[0].Career3}}</p>
         <p class="Career4">{{employee[0].Career4}}</p> 
         <p class="Career5">{{employee[0].Career5}}</p>
-        <p class="Career5">{{employee[0].Career5}}</p> 
         <p class="Career6">{{employee[0].Career6}}</p> 
-        <p class="Career7">{{employee[0].Career7}}</p> 
-        <p class="Career5">{{employee[0].Career7}}</p> 
+        <p class="Career7">{{employee[0].Career7}}</p>  
         <p class="Career8">{{employee[0].Career8}}</p> 
         <p class="Career9">{{employee[0].Career9}}</p> 
         <p class="Career10">{{employee[0].Career10}}</p> 
