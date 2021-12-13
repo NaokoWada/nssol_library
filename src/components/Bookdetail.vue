@@ -170,6 +170,8 @@ export default {
 
 .buttonmenu {
   margin: 10px 30px;
+  background-color:black;
+  
 }
 
 
