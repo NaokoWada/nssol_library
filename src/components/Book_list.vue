@@ -61,38 +61,53 @@
     <th style="width:150px;">社内評価</th>
     <th style="width:150px;">BU評価</th>
     
-    <th style="width:300px;">高評価した人</th>
-    <!-- <th style="width:150px;">感想</th> -->
-    <th style="width:300px;">キーワード一致</th>
-    <!-- <th style="width:150px;">感想</th> -->
+    <th style="width:440px;">読んだ人</th>
     </tr>
     </thead>
     
     <tbody style="display: block;overflow-y:scroll;height:600px;">
 
+    
+
     <tr v-for="book in filteredbooks" v-bind:key="book.id">
       <!--<div v-if="book.title== keyword || book.keyword==keyword">-->         
 
         <td style="width:150px;"><img :src="book.image"></td>
-    
 
         <td style="width:150px;"><router-link :to="`/bookList/${book.id}`">{{book.title}}</router-link></td>
         <td style="width:150px;">{{book.keyword}}</td>
         <td style="width:150px;">{{book.level}}</td>
         <td style="width:150px;">{{book.internal}}</td>
         <td style="width:150px;">{{book.bu}}</td>
-    
-        <td style="width:300px;"><img :src="book.employee1"></td>
-        
-        <td style="width:300px;"><img :src="book.employee2"></td>
+
+        <td style="width: 440px">
+            <ul class="example">
+              <li>
+                <font size="4" color="black">この本を高評価</font>
+                <img alt="user img" :src="book.employee1" />
+                <br />
+                <button class="buttonmenu" v-on:click="openModal(book)">
+                  感想を見る
+                </button>
+                <MyModal :val="postBook" :commentId=1 @close="closeModal" v-if="modal">
+                </MyModal>
+              </li>
+              <li>
+                <font size="4" color="black">職歴とキーワード一致</font>
+                <img alt="user img" :src="book.employee2" />
+                <br />
+                <button class="buttonmenu" v-on:click="openModal2(book)">
+                  感想を見る
+                </button>
+                <MyModal :val="postBook"  :commentId=2 @close="closeModal2" v-if="modal2">
+                </MyModal>
+              </li>
+            </ul>
+          </td>
         
 
       <!--</div>--> 
-
-
     </tr>
-  
-
     
     </tbody>
     </table>
