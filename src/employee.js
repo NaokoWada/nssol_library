@@ -1,6 +1,6 @@
 const employees = [
            {id:1,
-           icon:require('./assets/employee1.png'),
+           Icon:require('./assets/employee1.png'),
            Name:'多田 孝和',
            Organization1:'技術本部',
            Organization2:'',

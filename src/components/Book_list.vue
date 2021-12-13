@@ -91,6 +91,7 @@
       </thead>
 
       <tbody style="display: block; overflow-y: scroll; height: 600px">
+
         <tr v-for="book in filteredbooks" v-bind:key="book.id">
           <!--<div v-if="book.title== keyword || book.keyword==keyword">-->
 
@@ -107,16 +108,22 @@
 
           <td style="width: 440px">
             <ul class="example">
-              <li>
-                <router-link :to="`/employee/1`"><img :src="book.employee1"></router-link>
-                <br />
-                <button class="buttonmenu" v-on:click="openModal(book)">
-                  感想を見る
-                </button>
-                <MyModal :val="postBook" :commentId=1 @close="closeModal" v-if="modal">
-                </MyModal>
+              <li> 
+                
+                  <ul v-for="emp in filteredemps(book.keyword)" v-bind:key="emp.id">
+                    <li>
+                      <router-link :to="`/employee/1`">
+                        <img :src="emp.Icon">
+                      </router-link>
+                      <button class="buttonmenu" v-on:click="openModal(book)">
+                        感想を見る
+                      </button>
+                      <MyModal :val="postBook" :commentId=1 @close="closeModal" v-if="modal">
+                      </MyModal>
+                    </li>
+                  </ul>
+                <br />  
               </li>
-
               <li>
                 <img alt="user img" :src="book.employee2" />
                 <br />
@@ -129,6 +136,9 @@
             </ul>
           </td>
           <!--</div>-->
+        </tr>
+        <tr v-for="emp in filteredemps" v-bind:key="emp.id">
+        <td style="width: 150px"><img :src="emp.Icon"></td>
         </tr>
       </tbody>
     </table>
@@ -219,8 +229,56 @@ export default {
              comment2:'OSPFについて完璧に理解できる。ただし内容は英語',
              keyword:'OSPF,ルーティング',
              level:'上級'}
-             ]
-          
+             ],
+      employees : [
+           {id:1,
+           Icon:require('../assets/emp4.png'),
+           Name:'多田 孝和',
+           Organization1:'技術本部',
+           Organization2:'',
+           Organization3:'情報システム部',
+           Organization4:'業務システムGr',
+           Organization5:'',
+           Post         :'上級専門職',
+           Startdate    :'2020/03/01',
+           ITSS1        :'Project Manager',
+           ITSS1level   :'4',
+           ITSS2        :'Application Specialist',
+           ITSS2level   :'4',
+           Skill        :'DX プロジェクトマネージメント マネージメント データ連携 運用設計 給与計算 年末調整 タレントマネージメント 勤務管理 ベンダー管理 ワークフロー Sharepoint Intramart', 
+           Skillemp     :'DX',
+           Career1      :'2010年4月商社系Sier入社',
+           Career2      :'2010年4月～8月新人研修',
+           Career3      :'2010年8月DataSpider検証',
+           Career4      :'2010年9月～2011年3月 Lotus Notes8.5.2 マイグレーションプロジェクト　新機能検証・推進',
+           Career5      :'・',
+           Career6      :'2014年7月会社統合',
+           Career7      :'・',
+           Career8      :'2017年1月～2020年3月メガバンク向け人事・給与システム保守プロジェクト　賞与・人事資格Tリーダー、ツールTリーダー、データ連携プロジェクトリーダー',
+           Career9      :'2020年3月NSSOL入社',
+           Career10     :'2020年3月～現在　勤務管理・経費WFシステム刷新プロジェクト　移行・運用リーダー',
+           Book1image   :require('../assets/datamodel.png'),
+           Book1point   :'★★★★★',
+           Book1comment :'実務上のケースでこのようにデータモデリングすればよいという具体的でとてもわかりやすい本',
+           Book2image   :require('../assets/vendar.png'),
+           Book2point   :'★★★★',
+           Book2comment :'遅延していた場合、どのようなアクションをとればいいまで記載されている現場重視の本',
+           Book3image   :'',
+           Book3point   :'★★★★★',
+           Book3comment :'',
+           Book4image   :'',
+           Book4point   :'',
+           Book4comment :'',
+           Book5image   :'',
+           Book5point   :'',
+           Book5comment :'',
+           },
+           {id:2,
+           Icon:require('../assets/emp2.png'),
+           Skillemp     :'ネットワーク',
+           },
+           ]
+           
     }
 
   },
@@ -248,6 +306,21 @@ export default {
           id: num,
         },
       });
+    },
+
+    filteredemps: function (keyword) {
+      var employees = [];
+
+      for (var j in this.employees) {
+        var e = this.employees[j];
+        if (keyword.indexOf(e.Skillemp) !== -1)
+        {
+          employees.push(e);
+        }
+      }
+      console.log(employees);
+      console.log(e);
+      return employees;
     },
   },
 
