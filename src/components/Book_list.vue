@@ -80,30 +80,11 @@
         <td style="width:150px;">{{book.internal}}</td>
         <td style="width:150px;">{{book.bu}}</td>
 
-        <td style="width: 440px">
-            <ul class="example">
-              <li>
-                <font size="4" color="black">この本を高評価</font>
-                <img alt="user img" :src="book.employee1" />
-                <br />
-                <button class="buttonmenu" v-on:click="openModal(book)">
-                  感想を見る
-                </button>
-                <MyModal :val="postBook" :commentId=1 @close="closeModal" v-if="modal">
-                </MyModal>
-              </li>
-              <li>
-                <font size="4" color="black">職歴とキーワード一致</font>
-                <img alt="user img" :src="book.employee2" />
-                <br />
-                <button class="buttonmenu" v-on:click="openModal2(book)">
-                  感想を見る
-                </button>
-                <MyModal :val="postBook"  :commentId=2 @close="closeModal2" v-if="modal2">
-                </MyModal>
-              </li>
-            </ul>
-          </td>
+    
+        <!-- <td style="width:300px;"><img :src="book.employee1"></td> -->
+        <td style="width:300px;"><router-link :to="`/employee/1`"><img :src="book.employee1"></router-link></td>
+        <td style="width:300px;"><img :src="book.employee2"></td>
+
         
 
       <!--</div>--> 

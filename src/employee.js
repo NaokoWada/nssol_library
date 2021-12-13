@@ -1,4 +1,4 @@
-const employee = [
+const employees = [
            {id:1,
            icon:require('./assets/employee1.png'),
            Name:'多田 孝和',
@@ -13,8 +13,7 @@ const employee = [
            ITSS1level   :'4',
            ITSS2        :'Application Specialist',
            ITSS2level   :'4',
-           Skill        :'プロジェクトマネージメント','マネージメント','データ連携','運用設計','給与計算','年末調整','タレントマネージメント','勤務管理','ベンダー管理','ワークフロー','Sharepoint',
-                         'Intramart',
+           Skill        :'プロジェクトマネージメント マネージメント データ連携 運用設計 給与計算 年末調整 タレントマネージメント 勤務管理 ベンダー管理 ワークフロー Sharepoint Intramart',
            Career1      :'2010年4月商社系Sier入社',
            Career2      :'2010年4月～8月新人研修',
            Career3      :'2010年8月DataSpider検証',
@@ -31,15 +30,15 @@ const employee = [
            Book2image   :require('./assets/vendar.png'),
            Book2point   :'★★★★',
            Book2comment :'遅延していた場合、どのようなアクションをとればいいまで記載されている現場重視の本',
-           Book3image   :,
+           Book3image   :'',
            Book3point   :'★★★★★',
-           Book3comment :,
-           Book4image   :,
-           Book4point   :,
-           Book4comment :,
-           Book5image   :,
-           Book5point   :,
-           Book5comment :,
+           Book3comment :'',
+           Book4image   :'',
+           Book4point   :'',
+           Book4comment :'',
+           Book5image   :'',
+           Book5point   :'',
+           Book5comment :'',
            }
            ]
-  export default books
+  export default employees
