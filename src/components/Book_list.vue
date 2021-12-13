@@ -108,7 +108,6 @@
           <td style="width: 440px">
             <ul class="example">
               <li> 
-                
                   <ul v-for="emp in filteredemps(book.keyword)" v-bind:key="emp.id">
                     <li>
                       <router-link :to="`/employee/1`">
@@ -117,7 +116,7 @@
                       <button class="buttonmenu" v-on:click="openModal(book)">
                         感想を見る
                       </button>
-                      <MyModal :val="postBook" :commentId=1 @close="closeModal" v-if="modal">
+                      <MyModal :val="postBook" :commentId=1 @close="closeModal" v-if="modal[book.id-1]">
                       </MyModal>
                     </li>
                   </ul>
@@ -286,7 +285,7 @@ export default {
     openModal(id,book) {
       this.modal[id-1] = true;
       this.postBook = book
-      console.log(this.modal);
+      // console.log(this.modal);
       // v-ifは上記だと配列の変更を認識できないため .spliceを使用する
       this.modal.splice();
     },
@@ -296,7 +295,7 @@ export default {
     },
     closeModal(id) {
       this.modal[id-1] = false;
-      console.log(this.modal);
+      // console.log(this.modal);
       this.modal.splice();
     },
     closeModal2() {
@@ -322,8 +321,8 @@ export default {
           employees.push(e);
         }
       }
-      console.log(employees);
-      console.log(e);
+      // console.log(employees);
+      // console.log(e);
       return employees;
     },
   },
@@ -349,7 +348,7 @@ export default {
   created: function() {
     const a = Array(this.books.length).fill(false)
     this.modal = a
-    console.log(this.modal)
+    // console.log(this.modal)
   }
 };
 </script>
