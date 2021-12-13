@@ -13,7 +13,7 @@ const employees = [
            ITSS1level   :'4',
            ITSS2        :'',
            ITSS2level   :'',
-           Skill        :'UXデザイナー,DX,DX推進,運用設計,給与計算,年末調整,採用,勤務管理,ベンダー管理,ワークフロー,Sharepoint,Intramart',
+           Skill        :'UXデザイナー,DX,DX推進,アジャイル開発,スクラム',
            Career1      :'2014年4月NSSOL入社',
            Career2      :'2014年4月～10月新人研修',
            Career3      :'2014年8月流通ソリューション事業部配属',
