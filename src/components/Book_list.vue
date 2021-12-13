@@ -61,38 +61,34 @@
     <th style="width:150px;">社内評価</th>
     <th style="width:150px;">BU評価</th>
     
-    <th style="width:300px;">高評価した人</th>
-    <!-- <th style="width:150px;">感想</th> -->
-    <th style="width:300px;">キーワード一致</th>
-    <!-- <th style="width:150px;">感想</th> -->
+    <th style="width:440px;">読んだ人</th>
     </tr>
     </thead>
     
     <tbody style="display: block;overflow-y:scroll;height:600px;">
 
+    
+
     <tr v-for="book in filteredbooks" v-bind:key="book.id">
       <!--<div v-if="book.title== keyword || book.keyword==keyword">-->         
 
         <td style="width:150px;"><img :src="book.image"></td>
-    
 
         <td style="width:150px;"><router-link :to="`/bookList/${book.id}`">{{book.title}}</router-link></td>
         <td style="width:150px;">{{book.keyword}}</td>
         <td style="width:150px;">{{book.level}}</td>
         <td style="width:150px;">{{book.internal}}</td>
         <td style="width:150px;">{{book.bu}}</td>
+
     
         <!-- <td style="width:300px;"><img :src="book.employee1"></td> -->
         <td style="width:300px;"><router-link :to="`/employee/1`"><img :src="book.employee1"></router-link></td>
         <td style="width:300px;"><img :src="book.employee2"></td>
+
         
 
       <!--</div>--> 
-
-
     </tr>
-  
-
     
     </tbody>
     </table>
