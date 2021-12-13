@@ -53,4 +53,5 @@ export default {
         employees: employee,
     };
   },
+}
 </script>
