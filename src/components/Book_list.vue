@@ -82,8 +82,8 @@
         <td style="width:150px;">{{book.internal}}</td>
         <td style="width:150px;">{{book.bu}}</td>
     
-        <td style="width:300px;"><img :src="book.employee1"></td>
-        
+        <!-- <td style="width:300px;"><img :src="book.employee1"></td> -->
+        <td style="width:300px;"><router-link :to="`/employee/1`"><img :src="book.employee1"></router-link></td>
         <td style="width:300px;"><img :src="book.employee2"></td>
         
 
