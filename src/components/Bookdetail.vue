@@ -20,8 +20,8 @@
         <td>
           <div id="tab">
             <ul class="tabMenu">
-              <li class="tabmenu" @click="isSelect('1')">感想</li>
-              <li class="tabmenu" @click="isSelect('2')">Q＆A</li>
+              <li class="tabmenu1" @click="isSelect('1')">感想</li>
+              <li class="tabmenu2" @click="isSelect('2')">Q＆A</li>
             </ul>
             <div class="tabContents">
               <div v-if="isActive === '1'">
@@ -36,7 +36,7 @@
 
         <td>
           <div id="review">
-            <h1>この本を読んだ人</h1>
+            <h1 class="reviewer">この本を読んだ人</h1>
             <ul class="example">
               <li>
                 <img alt="user img" src="../assets/user.png" />
@@ -133,33 +133,53 @@ export default {
 #tab {
   width: 100%;
   max-width: 500px;
-  margin: 40px 300px 40px 200px;
+  margin: 40px 300px 40px 300px;
 }
 
 .tabMenu {
   display: flex;
 }
-.tabmenu {
+
+.tabmenu1 {
   width: auto;
   padding: 10px 20px;
   color: white;
   border-right: 1px solid white;
   background-color: green;
   cursor: pointer;
+  margin: 0 0 0 200px;
+}
+
+.tabmenu2 {
+  width: auto;
+  padding: 10px 20px;
+  color: white;
+  border-right: 1px solid white;
+  background-color: green;
+  cursor: pointer;
+  margin: 0 40px 0 0;
 }
 
 .tabContents {
-  width: 600px;
+  width: 700px;
   height: 600px;
   padding: 20px 60px;
   border: 1px solid green;
   text-align: left;
+  margin: auto 400px auto 200px;
 }
 
 .home {
   margin: 30px;
 }
 
+.reviewer {
+  margin: 0 400px;
+}
+
+.example {
+  margin:  50px 300px;
+}
 .example li {
   float: left;
   list-style: none;
@@ -170,8 +190,6 @@ export default {
 
 .buttonmenu {
   margin: 10px 30px;
-  background-color:black;
-  
 }
 
 
