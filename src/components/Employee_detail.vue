@@ -28,7 +28,7 @@
         <p class="Career9">{{employee[0].Career9}}</p> 
         <p class="Career10">{{employee[0].Career10}}</p> 
       </div>
-      <div id="Career">読んだ本</div>
+      <div id="ReadinBooks"><h3>読んだ本</h3></div>
       <table>
         <colgroup span="2"></colgroup>
         <colgroup>
@@ -96,13 +96,24 @@ export default {
 }
 </script>
 <style scoped>
+#employee {
+  width:40%;
+  margin-right: auto;
+  margin-left : auto;
+}
+
 #EmployeeTitle {
   font-size: 20px;
-  margin-left: 20px;
+  /* margin-left: 20px; */
   padding-left: 20px;
   border: solid 1px black;
   border-width: 100%;
   margin-right: 0;
 };
 
+#ReadinBooks {
+  padding: 10px 20px;
+}
+
 </style>
+
