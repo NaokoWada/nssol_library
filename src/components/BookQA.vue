@@ -19,7 +19,7 @@
               </div>
               <div class="chatting">
                 <div class="says">
-                  <p>{{ qa }}</p>
+                  <p>{{ qa.comment }}</p>
                 </div>
               </div>
             </div>
@@ -33,6 +33,7 @@
 <script>
 export default {
   name: "BookQA",
+  props: ["bookId"],
   data() {
     return {
       isActive: "1",
@@ -41,10 +42,46 @@ export default {
     };
   },
   components: {},
+  created() {
+    this.readBookComments()
+  },
   methods: {
+    readBookComments() {
+      fetch('http://localhost:3000/books', {method: 'GET'})
+      .then(res => {
+        return res.json()
+      })
+      .then(results => {
+        results.forEach(element => {
+          if (element.id === Number(this.bookId)) {
+            element.comments.forEach(comment => { 
+              this.QAs.push(comment)
+            })
+            // this.QAs.push(element);
+          }
+        });
+        // this.QAs = results
+        console.log(this.QAs)
+      })
+    },
     addReview() {
-      this.QAs.unshift(this.inputQA);
-      this.inputQA = "";
+      const data = {userId: 1, comment: "test"}
+      fetch('http://localhost:3000/books', {
+        method: 'POST',
+        body: JSON.stringify(data)
+        }
+      ).then(res => {
+        if (!res.ok) {
+          console.log("Create error!");
+          return res.json();
+        }
+      }).then(data => {
+        console.log(data);
+      }).catch(error => {
+        console.log(error);
+      }).finally(function() {
+        this.inputQA = "";
+      }) 
     },
   },
 };

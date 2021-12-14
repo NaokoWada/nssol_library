@@ -28,7 +28,7 @@
                 <BookReview></BookReview>
               </div>
               <div v-if="isActive === '2'">
-                <BookQA></BookQA>
+                <BookQA :bookId="findBook.id"></BookQA>
               </div>
             </div>
           </div>
