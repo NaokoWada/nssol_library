@@ -2,7 +2,8 @@
   <div id="app">
     <div id="employee">
       <div id="EmployeeTitle">
-        <div>
+        <h3>社員プロフィール</h3>
+        <div class="userIcon">
         <img :src="employee[0].Icon" />
         </div>
         <p class="name">社員名：{{employee[0].Name}}</p>
@@ -16,7 +17,8 @@
         <p class="itss2">ITSS2level：{{employee[0].ITSS2level}}</p>
         <p class="skill">スキル：{{employee[0].Skill}}</p>
       </div>
-      <div id="EmployeeTitle">業務経歴
+      <div id="EmployeeTitle">
+        <h3>業務経歴</h3>
         <p class="Career1">{{employee[0].Career1}}</p>
         <p class="Career2">{{employee[0].Career2}}</p>
         <p class="Career3">{{employee[0].Career3}}</p>
@@ -28,7 +30,7 @@
         <p class="Career9">{{employee[0].Career9}}</p> 
         <p class="Career10">{{employee[0].Career10}}</p> 
       </div>
-      <div id="ReadinBooks"><h3>読んだ本</h3></div>
+      <div id="ReadingBooks" style="padding-left: 20px; font-size: 20px; border-top: solid 1px black;"><h3>読んだ本</h3>
       <table>
         <colgroup span="2"></colgroup>
         <colgroup>
@@ -81,6 +83,7 @@
           </tr>
       </tbody>
       </table>
+      </div>
     </div>
   </div>
 </template>
@@ -106,14 +109,11 @@ export default {
   font-size: 20px;
   /* margin-left: 20px; */
   padding-left: 20px;
-  border: solid 1px black;
+  border-top: solid 1px black;
   border-width: 100%;
   margin-right: 0;
 };
 
-#ReadinBooks {
-  padding: 10px 20px;
-}
 
 </style>
 
